@@ -229,6 +229,20 @@ $("#id_arquidiocesis").change(function() {
     }
 });
 
+
+// mostrar el campo "religion_otra" cuando la persona seleccione "Otra religion"
+$("#reli").hide();
+
+$("#id_religion").change(function() {
+
+    if (this.value == 'otras')
+        $('#reli').css({ "display": "initial" });
+
+    else
+        $('#reli').css({ "display": "none" });
+});
+
+
 function Clear() {
     document.getElementById('id_nombre').value = '';
     document.getElementById('id_apellido').value = '';
