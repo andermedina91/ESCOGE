@@ -175,8 +175,7 @@ function CreateFicha() {
 
 }
 
-
-//===
+//  lista de diocesis
 var diocsesis = [
     "Diócesis de Baní",
     "Diócesis de San Juan de la Maguana",
