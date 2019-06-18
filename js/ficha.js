@@ -130,6 +130,7 @@ function CreateFicha() {
             apellido: apellido,
             edad: edad,
             genero: genero,
+            identidad: identidad,
             ecivil: ecivil,
             fecha: fecha,
             estudios: estudios,
