@@ -18,7 +18,7 @@ var config = {
 var app = firebase.initializeApp(config);
 db = firebase.firestore(app);
 
-var database = firebase.firestore(app);
+// var database = firebase.firestore(app);
 
 // Opciones de fecha
 var date = new Date();
