@@ -20,15 +20,16 @@
    
    body {
        color: #080808;
-       font-family: "Poppins", sans-serif;
-       font-size: 16px;
+       font-family: 'Roboto', sans-serif;
+       /* font-family: "Poppins", sans-serif;*/
+       font-size: 18px;
        font-weight: 300;
        line-height: 1.625em;
        position: relative;
    }
    
    .title {
-       font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif
+       font-family: 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif
    }
    /* CODIGO BODY*/
    /* CODIGO COLOR FOOTER */
