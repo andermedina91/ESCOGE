@@ -18,6 +18,7 @@ var pcomunion = 0;
 var confirmacion = 0;
 
 
+
 // variables Mensajes sin Leer
 var contacto = 0;
 
@@ -110,7 +111,7 @@ dbRef.get().then(function(querySnapshot) {
         }
 
         // SOLO INCREMENTA 1 EN EL GRAFICO SI ESTA BAUTIZADO, HIZO LA PRIMERA COMUNION Y LA CONFIRMACION
-        if (doc.data().confirmacion == 'SI') {
+        if (doc.data().Confirmacion == 'SI') {
             pcomunion--;
             confirmacion++;
         }
