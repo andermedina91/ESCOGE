@@ -1,10 +1,16 @@
-function name(params) {
+// conexion a Firebase y Configuracion
+var firebaseConfig = {
+    apiKey: "AIzaSyD0mkwckSn7XLkSjUWIjyxa25OeQQMmhCA",
+    authDomain: "escogerd01.firebaseapp.com",
+    databaseURL: "https://escogerd01.firebaseio.com",
+    projectId: "escogerd01",
+    storageBucket: "escogerd01.appspot.com",
+    messagingSenderId: "1054260091136"
+};
 
-}
-// function to get get form values
-function getinputval(id) {
-    return document.getElementById(id).value;
-}
+// Inicializando Firebase
+var app = firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore(app);
 
 
 var dbreporte = db.collection('ficha');
@@ -14,7 +20,6 @@ dbreporte.get().then(function(querySnapshot) {
     //console.log(doc.doc);
     querySnapshot.forEach(function(data) {
         console.log(data.data());
-
 
         content += '<tr>';
         content += '<td>' + data.data().nombre + '</td>';
@@ -33,7 +38,14 @@ dbreporte.get().then(function(querySnapshot) {
     });
 
 
-    $('#dataTable').append(content);
+    $('#dataTable').append("<tbody>" + content + "</tbody>");
 
+    $('#dataTable').DataTable({
+        responsive: true,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
 
 });

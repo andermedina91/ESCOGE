@@ -29,7 +29,6 @@ dbreporte.get().then(function(querySnapshot) {
     querySnapshot.forEach(function(data) {
         console.log(data.data());
 
-
         content += '<tr>';
         content += '<td>' + data.data().nombre + '</td>';
         content += '<td>' + data.data().apellido + '</td>';
@@ -47,7 +46,14 @@ dbreporte.get().then(function(querySnapshot) {
     });
 
 
-    $('#dataTable').append(content);
+    $('#dataTable').append("<tbody>" + content + "</tbody>");
 
+    $('#dataTable').DataTable({
+        responsive: true,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
 
 });

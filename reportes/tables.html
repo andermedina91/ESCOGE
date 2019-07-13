@@ -43,27 +43,47 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ESCOGE RD</div>
+                <div class="sidebar-brand-text mx-3">ESCOGE RD Admin</div>
             </a>
+            <br>
+            <br>
+            <hr class="sidebar-divider">
+            <!-- Inicio Gestor de Contenido -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Gestor de Contenido</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Galerias & Eventos:</h6>
+                        <a class="collapse-item" href="#">Album</a>
+                        <a class="collapse-item" href="#">Info Retiros</a>
+                        <a class="collapse-item" href="#l">Geleria Imagen</a>
+                        <a class="collapse-item" href="#">Eventos</a>
+
+                    </div>
+                </div>
+            </li>
 
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Elemento de navegación - Utilidades Contraer menú -->
+            <!-- ELEMENTO DE NAVEGACION DE REPORTES -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Reportes</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">REPORTES:</h6>
-                        <a class="collapse-item" href="diocesis.html">DIOCESIS</a>
-                        <a class="collapse-item" href="estadocivil.html">SOLTERO/A</a>
-                        <a class="collapse-item" href="genero.html">GENERO</a>
-                        <a class="collapse-item" href="religion.html">RELIGION</a>
-                        <a class="collapse-item" href="sacramentos.html">SACRAMENTOS</a>
+                        <a class="collapse-item" href="diocesis.html">Diocesis</a>
+                        <a class="collapse-item" href="estadocivil.html">Estado Civil</a>
+                        <a class="collapse-item" href="genero.html">Genero</a>
+                        <a class="collapse-item" href="religion.html">Religion</a>
+                        <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
 
 
                     </div>
@@ -78,7 +98,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Paginas</span>
+                    <span>Paginas de inicio</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -93,7 +113,7 @@
                     </div>
                 </div>
             </li>
-
+            <hr class="sidebar-divider">
 
 
             <!-- Objeto de navegación - Tablas -->
@@ -192,12 +212,12 @@
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" onclick="exportTableToExcel('dataTable','Listado por genero')"><i class="fas fa-download fa-sm text-white-50"></i> Exportar a EXCEL</a>
                 </div>-->
 
-                <!-- Begin Page Content -->
+                <!-- INICIO CONTENEDOR TABLA -->
                 <div class="container-fluid">
 
 
 
-                    <!-- DataTales Example -->
+                    <!-- Tabla de Informaciones Generales -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Informaciones General del Participantes
@@ -207,7 +227,7 @@
                         <div class="card-body">
                             <div>
                                 <table class="table table-bordered display" id="dataTable" width="100%" cellspacing="0">
-                                    <!--  <table style="width:100%" id="dataTable">-->
+
                                     <thead>
                                         <tr id="tr">
                                             <th>Fecha inscripcion</th>
@@ -235,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
+                <!-- FIN CONTENEDOR TABLA -->
 
             </div>
             <!-- End of Main Content -->

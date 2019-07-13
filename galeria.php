@@ -84,30 +84,45 @@
         <div class="row">
             <h1>Galeria De Imagenes</h1>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="asamblea18.html" data-title="" data-image="img\asamblea18/1.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\galeria/sfm.jpg" alt="Another alt text">
-                        <h3>Asamblea Nacional Escoge 2018</h3>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <?php
+
+                    require_once('reportes/admin/consultas.php');
+
+                    $albums = galleries();
+
+                    if(! empty($albums))
+                    {
+                        for($x = 0; $x < count($albums['titulo']); $x++)
+                        {
+                            echo '
+                                <div class="col-lg-4 col-md-4 col-xs-6 ">
+                                    <a class="thumbnail" href="mostrargaleria.php?gallery='.$albums['slug'][$x].'" data-title="" data-image="img\asamblea18/3.jpg" data-target="#image-gallery">
+                                        <img class="img-thumbnail" src="'. substr($albums['imagen'][$x], 6) .'" alt="Another alt text">
+                                        <h3>'. $albums['titulo'][$x] .'</h3>
+                                    </a>
+                                </div>
+                            ';
+                        }
+                    }
+
+                    else
+                        echo '<h3>No existen galerias registradas.</h3>';
+                ?>
+                
+
+                <!-- <div class="col-lg-4 col-md-4 col-xs-6 ">
                     <a class="thumbnail" href="asamblea17.html" data-title="" data-image="img\asamblea17/2.jpg">
                         <img class="img-thumbnail" src="img\galeria/jesus.jpg" alt="Another alt text">
                         <h3>Asamblea Nacional Escoge 2017</h3>
                     </a>
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <div class="col-lg-4 col-md-4 col-xs-6 ">
                     <a class="thumbnail" href="jmd.html" data-title="" data-image="img\asamblea18/3.jpg" data-target="#image-gallery">
                         <img class="img-thumbnail" src="img\galeria/jmd.jpg" alt="Another alt text">
                         <h3>JMD La Vega 2018</h3>
                     </a>
-
-                </div>
-
-
-
-
+                </div> -->
             </div>
 
 

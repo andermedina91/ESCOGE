@@ -15,6 +15,11 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://www.citizensfiber.com/assets/DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css">
+
     <!-- Custom styles for this template -->
 
     <link rel="stylesheet" href="css/reporte.css">
@@ -43,27 +48,48 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ESCOGE RD</div>
+                <div class="sidebar-brand-text mx-3">ESCOGE RD Admin</div>
             </a>
+            <br>
+            <br>
+            <hr class="sidebar-divider">
+            <!-- Inicio Gestor de Contenido -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Gestor de Contenido</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Galerias & Eventos:</h6>
+                        <a class="collapse-item" href="#">Album</a>
+                        <a class="collapse-item" href="#">Info Retiros</a>
+                        <a class="collapse-item" href="#l">Geleria Imagen</a>
+                        <a class="collapse-item" href="#">Eventos</a>
+
+                    </div>
+                </div>
+            </li>
 
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Elemento de navegación - Utilidades Contraer menú -->
+            <!-- ELEMENTO DE NAVEGACION DE REPORTES -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Reportes</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">REPORTES:</h6>
-                        <a class="collapse-item" href="diocesis.html">DIOCESIS</a>
-                        <a class="collapse-item" href="estadocivil.html">SOLTERO/A</a>
-                        <a class="collapse-item" href="genero.html">GENERO</a>
-                        <a class="collapse-item" href="religion.html">RELIGION</a>
-                        <a class="collapse-item" href="sacramentos.html">SACRAMENTOS</a>
+                        <a class="collapse-item" href="diocesis.html">Diocesis</a>
+                        <a class="collapse-item" href="ciudad.html">Ciudad</a>
+                        <a class="collapse-item" href="estadocivil.html">Estado Civil</a>
+                        <a class="collapse-item" href="genero.html">Genero</a>
+                        <a class="collapse-item" href="religion.html">Religion</a>
+                        <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
 
 
                     </div>
@@ -78,7 +104,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Paginas</span>
+                    <span>Paginas de inicio</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -93,7 +119,7 @@
                     </div>
                 </div>
             </li>
-
+            <hr class="sidebar-divider">
 
 
             <!-- Objeto de navegación - Tablas -->
@@ -158,13 +184,13 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
+                        <!-- Nav Item - User Information --
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>
-                            <!-- Dropdown - User Information -->
+                        
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
@@ -181,6 +207,7 @@
                                 </a>
                             </div>
                         </li>
+                    -->
 
                     </ul>
 
@@ -288,6 +315,9 @@
     <script src="js/reporte.js"></script>
     <script src="js/genero.js"></script>
     <script src="js/exportacion.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 
     <!-- <script src="js/tablas.js"></script> -->

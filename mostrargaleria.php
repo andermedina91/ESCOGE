@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" class="no-js">
+<html lang="en">
 
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/Logo_banner.png">
+    <link rel="shortcut icon" href="img/150.jpg">
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -18,16 +18,15 @@
     <title>ESCOGE REPUPLICA DOMINICANA</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-			CSS
-			============================================= -->
-
+    <!--CSS ============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- <link rel="stylesheet" href="css/animate.min.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mystyle.css">
-    <link rel="stylesheet" href="css/galeria1.css">
 </head>
 
 <body>
@@ -81,76 +80,46 @@
     <!-- INICIO DE GALERIA  -->
 
     <div class="container">
-        <h1>Galeria Imagen Asamblea 2017</h1>
+        <?php
+                    
+            require_once('reportes/admin/consultas.php');
+
+            $gallery = getGallery($_GET['gallery']);
+
+        ?>
+
+        <h1><?php echo $gallery['titulo'][0] ?></h1>
+
         <div class="row">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="img\asamblea17/1.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/1.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="img\asamblea17/2.jpg">
-                        <img class="img-thumbnail" src="img\asamblea17/2.jpg" alt="Another alt text">
-                    </a>
-                </div>
+                <?php
+                    
+                    if(! empty($gallery))
+                    {
+                        for($x = 0; $x < count($gallery['titulo']); $x++)
+                        {
+                            echo '
+                                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Jornada Misionera Diocesana La Vega 2018" data-image="'.substr($gallery['imagen'][$x], 6).'" data-target="#image-gallery">
+                                        <img class="img-thumbnail" src="'.substr($gallery['imagen'][$x], 6).'" alt="Another alt text">
+                                    </a>
+                                </div>
+                            ';
+                        }
+                    }
 
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-image="img\asamblea17/3.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/3.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1" data-image="img\asamblea17/4.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/4.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/5.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/5.jpg" alt="Another alt text">
-                    </a>
-                </div>
+                    else
+                        echo '<h3>No existen fotos en la galeria seleccionada.</h3>';
 
+                ?>
 
+                <div class="col-md-12">
+                    <?php
 
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/6.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/6.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/7.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/7.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/8.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/8.jpg" alt="Another alt text">
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/9.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/9.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/10.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/10.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/11.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/11.jpg" alt="Another alt text">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice" data-image="img\asamblea17/12.jpg" data-target="#image-gallery">
-                        <img class="img-thumbnail" src="img\asamblea17/12.jpg" alt="Another alt text">
-                    </a>
+                        echo '<p style="margin-top: 40px">'. $gallery['descripcion'][0] .'</p>';
+                    ?>
                 </div>
             </div>
-
 
             <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -190,37 +159,35 @@
                 <div class="single-footer-widget ">
                     <h6>NOMBRES/ EMAIL</h6>
                     <p>
-                        ANDERSON MEDINA
+                        ANDERSON MEDINA / andermedina91@gmail.com
+                        <br> HEIDY FERNANDEZ / hfernandez@gmail.com
+                        <br> YIRA RODRIGUEZ / yrodriguez@gmail.com
                     </p>
+
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script> All rights reserved | This template is made with <i class="fa fa-heart-o " aria-hidden="true "></i></p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-6 ">
                 <div class="single-footer-widget ">
                     <h6>DIOCESIS/ ARQUIDIOCESIS</h6>
-                    <p>DIOCESIS DE LA VEGA</p>
+                    <p>DIOCESIS DE LA VEGA <br> ARQUIDIOCESIS DE SANTIAGO
+                        <br> ARQUIDIOCESIS DE SANTO DOMINGO
+
+                    </p>
                     <div class=" " id="mc_embed_signup ">
 
                         <form target="_blank " novalidate="true " action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01 " method="get " class="form-inline ">
 
                             <div class="d-flex flex-row ">
-
-
-
-
-
                                 <div style="position: absolute; left: -5000px; ">
                                     <input name="b_36c4fd991d266f23781ded980_aefe40901a " tabindex="-1 " value=" " type="text ">
                                 </div>
 
                                 <!-- <div class="col-lg-4 col-md-4 ">
-												<button class="bb-btn btn "><span class="lnr lnr-arrow-right "></span></button>
-											</div>  -->
+                                                    <button class="bb-btn btn "><span class="lnr lnr-arrow-right "></span></button>
+                                                </div>  -->
                             </div>
                             <div class="info "></div>
                         </form>
@@ -233,12 +200,24 @@
 
                     <div class="footer-social d-flex align-items-center ">
                         <a href="https://www.facebook.com/ "><i class="fa fa-facebook "></i></a>
-                        <a href="https://www.twitter.com/"><i class="fa fa-twitter "></i></a>
+                        <a href="https://twitter.com/ "><i class="fa fa-twitter "></i></a>
                         <a href="# "><i class="fa fa-youtube "></i></a>
                         <a href="# "><i class="fa fa-instagram "></i></a>
                     </div>
                 </div>
             </div>
+
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Ander Medina &copy; Todos los derechos Reservado 2019</span>
         </div>
     </div>
 </footer>
