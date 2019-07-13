@@ -73,14 +73,13 @@
 // Pie Chart Example
 setTimeout(function() {
 
-
     var ctx = document.getElementById("sacramento");
     var sacramento = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["Bautismo", "pcomunion", "Confirmacion"],
+            labels: ["Bautismo", "pcomunion", "confirmacion"],
             datasets: [{
-                data: [bautismo, pcomunion, Confirmacion],
+                data: [bautismo, pcomunion, confirmacion],
                 backgroundColor: ['#2710f2', '#cc1807', '#acaeb1'],
                 hoverBackgroundColor: ['#2710f2', '#cc1807', '#acaeb1'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",

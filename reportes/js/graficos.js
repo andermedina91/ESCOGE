@@ -15,7 +15,7 @@ var total_personas = 0;
 // variables grafico por Sacramento
 var bautismo = 0;
 var pcomunion = 0;
-var Confirmacion = 0;
+var confirmacion = 0;
 
 
 // variables Mensajes sin Leer
