@@ -5,21 +5,21 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ESCOGE RD Admin</title>
+    <title>ESCOGE RD REPORTE EVENTOS </title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/reporte.css" rel="stylesheet">
+
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/150.jpg">
-    <!-- Estilos personalizados para esta plantilla.-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/reporte.min.css">
 
 </head>
 
@@ -50,9 +50,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Galerias & Eventos:</h6>
-                        <a class="collapse-item" href="album.html">Album</a>
+                        <a class="collapse-item" href="#">Album</a>
                         <a class="collapse-item" href="#">Info Retiros</a>
-                        <a class="collapse-item" href="#l">Corousel</a>
+                        <a class="collapse-item" href="#l">Corosusel</a>
                         <a class="collapse-item" href="#">Eventos</a>
 
                     </div>
@@ -78,7 +78,6 @@
                         <a class="collapse-item" href="genero.html">Genero</a>
                         <a class="collapse-item" href="religion.html">Religion</a>
                         <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
-
 
                     </div>
                 </div>
@@ -143,7 +142,6 @@
           </button>
 
 
-                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -151,7 +149,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
+                            <!-- Dropdown - Messages -
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
@@ -163,7 +161,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div> -->
                         </li>
 
 
@@ -174,8 +172,10 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-                            </a> -->
-                        <!-- Dropdown - User Information -->
+                            </a>
+                            -->
+
+                        <!--
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
@@ -194,135 +194,51 @@
                         </li>
 
                     </ul>
+                    -->
 
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
 
                     <!-- Page Heading --
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"></h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"onclick="exportTableToExcel('dataTable','Lista por Diocesis')"></i> Exportar a EXCEL</a>
                     </div>
                 -->
 
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Cantida de Persona Por Diocesis</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
+                    <!-- INICIO CONTENEDOR -->
+                    <div class="container-fluid">
+                        <form method="POST" action="admin/album.php" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="title">Titulo del album: <small class="text-danger"><strong>*</strong></small></label>
+                                <input type="text" class="form-control" name="title" id="title" required>
                             </div>
-                        </div>
 
+                            <div class="form-group">
+                                <label for="description">Descripcion del album: <small class="text-danger"><strong>*</strong></small></label>
+                                <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="imagenes">Cargar imagenes: <small class="text-danger"><strong>*</strong></small></label>
+                                <input type="file" class="form-control" name="imagenes[]" id="imagenes" required="" multiple>
+                            </div>
+
+                            <br>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                            </div>
+                        </form>
                     </div>
+                    <!-- FIN CONTENEDOR -->
 
 
 
                 </div>
-                <!-- /.container-fluid -->
-                <!-- Card Body por Genero-->
-                <div class="row">
-
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Personas por genero</h6>
-                                <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card Body por Genero -->
-                            <div class="card-body">
-                                <div class="chart-pie pt-4 pb-2">
-                                    <canvas id="genero"></canvas>
-                                </div>
-                                <div class="mt-4 text-center small">
-                                    <span class="mr-2"><i class="fas fa-circle text-primary"></i> Masculino</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-danger"></i> Femenino</span>
-                                    <!-- <span class="mr-2"><i class="fas fa-circle text-warning"></i> Otros</span>-->
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Personas por Sacramentos</h6>
-                                <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Dropdown Header:</div>
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card Body por Sacramento -->
-                            <div class="card-body">
-                                <div class="chart-pie pt-4 pb-2">
-                                    <canvas id="sacramento"></canvas>
-                                </div>
-                                <div class="mt-4 text-center small">
-                                    <span class="mr-2"><i class="fas fa-circle text-primary"></i> Bautismo</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-danger"></i> Primera Comunion</span>
-                                    <span class="mr-2"><i class="fas fa-circle text-green"></i>  Confirmacion</span>
-                                    <!-- <span class="mr-2"><i class="fas fa-circle text-warning"></i> Otros</span>-->
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-
+                <!-- End of Main Content -->
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
@@ -338,7 +254,9 @@
             <!-- End of Content Wrapper -->
 
         </div>
+        <!-- End of Page Wrapper -->
 
+        <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
@@ -349,7 +267,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
-                            ¿Listo para salir?</h5>
+                            Listo para salir?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -358,7 +276,7 @@
                         Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" href="login.html">Cerrar</a>
+                        <a class="btn btn-primary" href="login.html">Cerrar Seccion</a>
                     </div>
                 </div>
             </div>
@@ -367,21 +285,14 @@
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src="vendor/chart.js/Chart.min.js"></script>
 
         <!-- Core plugin JavaScript-->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+        <!-- Custom scripts for all pages-->
 
-        <script src="js/reporte.min.js"></script>
-        <script src="js/graficos.js"></script>
-        <script src="js/tablas.js"></script>
-        <script src="js/genero.js"></script>
-        <script src="js/lineal.js"></script>
-        <script src="js/sacramentos.js"></script>
+
+
 
 
 </body>
