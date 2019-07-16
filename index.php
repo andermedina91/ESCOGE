@@ -249,31 +249,7 @@
             <div class="row justify-content-center d-flex ">
                 <div class="active-works-carousel mt-40 col-lg-8 ">
 
-                <?php
 
-                    require_once('reportes/admin/consultas.php');
-
-                    $eventos = eventos();
-
-                    if(! empty($eventos))
-                    {
-                        for($x = 0; $x < count($eventos['titulo']); $x++)
-                        {
-                            echo '
-                                <div class="item ">
-                                    <img class="img-fluid " src="'. substr($albums['imagen'][$x], 6) .'" alt=" ">
-                                    <div class="caption text-center mt-20 ">
-                                        <h6 class="text-uppercase ">'.strtoupper($eventos['titulo'][$x]).'</h6>
-                                        <p>'.$eventos['descripcion'][$x].'</p>
-                                    </div>
-                                </div>
-                            ';
-                        }
-                    }
-
-                    else
-                        echo '<h3>No existen eventos publicados.</h3>';
-                ?>
                     <!-- <div class="item ">
                         <img class="img-fluid " src="img/fds54.jpg " alt=" ">
                         <div class="caption text-center mt-20 ">
@@ -295,6 +271,29 @@
                             <p>Les digo que así mismo se alegra Dios con sus ángeles por un pecador que se arrepiente.<br> (Lucas 15:10)</p>
                         </div>
                     </div> -->
+
+                    <?php
+
+                        require_once('reportes/admin/consultas.php');
+
+                        $eventos = eventos();
+
+                        if(! empty($eventos))
+                        {
+                            for($x = 0; $x < count($eventos['titulo']); $x++)
+                            {
+                                echo '
+                                    <div class="item ">
+                                        <img class="img-fluid " src="'. substr($eventos['imagen'][$x], 6) .'" alt=" ">
+                                        <div class="caption text-center mt-20 ">
+                                            <h6 class="text-uppercase ">'.strtoupper($eventos['titulo'][$x]).'</h6>
+                                            <p>'.$eventos['descripcion'][$x].'</p>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                        }
+                    ?>
 
                 </div>
             </div>
