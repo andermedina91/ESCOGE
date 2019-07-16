@@ -100,6 +100,37 @@
         return $data ?? 0;
     }
 
+    //INICIO DE CAROUSEL
+
+    function carousel ()
+    {
+        include_once('conexion.php');
+
+        $query = "
+           
+            SELECT 
+            id_carousel,titulo,subtitulo,slug,descripcion,imagen,  FROM carousel
+        ";
+
+        // guardo los resultados de la consulta
+        $result = $conn->query($query);
+
+        // cierro la conexion a la base de datos
+        $conn->close();
+
+        // recorriendo los resultados de la consulta
+        while($row = $result->fetch_assoc())
+        {
+            $data['titulo'][] = $row['titulo'];
+            $data['subtitulo'][] = $row['subtitulo'];
+            $data['slug'][] = $row['slug'];
+            $data['descripcion'][] = $row['descripcion'];
+            $data['imagen'][] = $row['imagen'];
+        }
+
+        return $data ?? 0;
+    }
+
 
 
     

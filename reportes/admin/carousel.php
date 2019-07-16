@@ -2,7 +2,8 @@
 
     // llamo el archivo de conexion para la base de datos
     include_once('conexion.php');
-eventos
+    carousel 
+
     // directorio donde se van a guardar las imagenes
     $path = '../../img/carousel/';
 
@@ -11,14 +12,13 @@ eventos
     $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $titulo)));
     $descripcion = $_FILES['description'];
 
-    // guardando la info. en la entidad eventos
+    // guardando la info. en la entidad carousel
     $query = "
-        INSERT INTO
-        carousel (titulo, slug, descripcion)
-        VALUES
-            ('$titulo', '$slug', '$descripcion')
+    INSERT INTO carousel(id_carousel, titulo, subtitulo,slug, descripcion,imagen,)
+     VALUES ('$id_carousel','$titulo','$subtitulo','$slug','$descripcion','$imagen')
     ";
 
+  
     // verifico si la sentencia se ha ejecutado correctamente
     if($conn->query($query) === TRUE)
     {
