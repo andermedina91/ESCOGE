@@ -37,19 +37,18 @@
         <header class="default-header">
             <nav class="navbar navbar-expand-lg  navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="img/Logo_banner.png" style="height: 50%;width: 50%;" alt="logo de la pagina">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="text-white lnr lnr-menu"></span>
                     </button>
-
                     <div class="collapse navbar-collapse justify-content-end align-items-center " id="navbarSupportedContent ">
                         <ul class="navbar-nav ">
-                            <li><a href="index.html ">INICIO</a></li>
-                            <li><a href="index.html#conoceme">CONÓCEME</a></li>
-                            <li><a href="index.html#historia">HISTORIA</a></li>
-                            <li><a href="index.html#escogerd">ESCOGERD</a></li>
+                            <li><a href="index.php">INICIO</a></li>
+                            <li><a href="index.php#conoceme">CONÓCEME</a></li>
+                            <li><a href="index.php#historia">HISTORIA</a></li>
+                            <li><a href="index.php#escogerd">ESCOGERD</a></li>
                             <li><a href="contacto.html ">CONTACTO</a></li>
                             <!-- Dropdown -->
                             <li class="dropdown ">
@@ -58,12 +57,12 @@
                                 </a>
                                 <div class="dropdown-menu ">
 
-                                    <a class="dropdown-item " href="eventos.html">EVENTOS</a>
-                                    <a class="dropdown-item " href="ficha.html ">FICHA</a>
-                                    <a class="dropdown-item " href="galeria.html ">GALERIA</a>
-                                    <a class="dropdown-item " href="contenido.html ">CONTENIDO</a>
-                                    <a class="dropdown-item " href="equiponacional.html ">EQUIPO NACIONAL</a>
-                                    <a class="dropdown-item " href="diocesano.html ">EQUIPO POR DIOCESIS</a>
+                                    <a class="dropdown-item " href="index.php#eventos">EVENTOS</a>
+                                    <a class="dropdown-item " href="ficha.html">FICHA</a>
+                                    <a class="dropdown-item " href="galeria.php">GALERIA</a>
+                                    <!-- <a class="dropdown-item " href="contenido.html ">CONTENIDO</a> -->
+                                    <a class="dropdown-item " href="equiponacional.html">EQUIPO NACIONAL</a>
+                                    <a class="dropdown-item " href="diocesano.html">EQUIPO POR DIOCESIS</a>
 
 
                                 </div>

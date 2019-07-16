@@ -42,7 +42,7 @@
         <header class="default-header">
             <nav class="navbar navbar-expand-lg  navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <img src="img/Logo_banner.png" style="height: 50%;width: 50%;" alt="logo de la pagina">
                     </a>
                     <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
@@ -51,7 +51,7 @@
 
                     <div class="collapse navbar-collapse justify-content-end align-items-center " id="navbarSupportedContent ">
                         <ul class="navbar-nav ">
-                            <li><a href="index.html ">INICIO</a></li>
+                            <li><a href="index.php ">INICIO</a></li>
                             <li><a href="#conoceme">CONÓCEME</a></li>
                             <li><a href="#historia">HISTORIA</a></li>
                             <li><a href="#escogerd">ESCOGERD</a></li>
@@ -242,7 +242,7 @@
             <div class="row d-flex justify-content-center ">
                 <div class="menu-content pb-30 col-lg-8 ">
                     <div class="title text-center ">
-                        <h1 class="mb-10 ">EVENTOS DIOCESIS DE LA VEGA</h1>
+                        <h1 class="mb-10 ">EVENTOS REPUBLICA DOMINICANA </h1>
                     </div>
                 </div>
             </div>
@@ -288,86 +288,35 @@
                     </div>
                 </div>
             </div>
+
             <div class="row ">
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30 ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="">DIOCESIS DE LA VEGA</a></h4>
-                        </div>
-                        <p>
-                            <a href=" ">
-                            Iniciando el Viernes 08 de Novimiembre Terminando el Domingo 10. <br> Casa de Retiro Padre Fantino Santo Cerro La Vega, Rep. Dom.
-                        </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30 ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="# ">DIOCESIS DE SAN FRANCISCO DE MACORIS</a></h4>
-                        </div>
-                        <p>
-                            <a href="#">
-                                Iniciando el Viernes 23 de Agosto Terminando el Domingo 25. <br> Casa de Retiro Padre Fantino San Francisco Macoris, Rep. Dom.
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature mb-30 ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="# ">DIOCESIS DE SAN JUAN</a></h4>
-                        </div>
-                        <p>
-                            <a href="#">
-                                Iniciando el Viernes 20 de Septiembre Terminando el Domingo 22 Casa de Retiro Padre Carlos Santana  San Juan De La Maguana, Rep. Dom.
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="# ">DIOCESIS DE SANTIAGO</a></h4>
-                        </div>
-                        <p>
-                            <a href="# ">
-                                Iniciando Viernes 23 de Agosto Terminando el Domingo 25. <br> Casa de Cursillos de Cristiandad
-                                La Herradura, Santiago de los Caballeros, Rep. Dom.
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="# ">DIOCESIS DE SAN PEDRO</a></h4>
-                        </div>
-                        <p>
-                            <a href="# ">
-                                Iniciando el Viernes 03 de Mayo Terminando el Domingo 05. <br> Casa de Retiro Emaus San Pedro de Macoris, Rep. Dom.
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 ">
-                    <div class="single-feature ">
-                        <div class="title d-flex flex-row pb-20 ">
-                            <span class="lnr lnr-user "></span>
-                            <h4><a href="# ">DIOCESIS DE STO. DOM. </a></h4>
-                        </div>
-                        <p>
-                            <a href="#">
-                                Iniciando el Viernes 28 de Junio Terminando el Domingo 30. Casa de Retiro Casa de Cursillos de Cristiandad Santo Domingo.
-                            </a>
-                        </p>
-                    </div>
-                </div>
+                <?php
+
+                    require_once('reportes/admin/consultas.php');
+
+                    $retiros = retiros();
+
+                    if(! empty($retiros))
+                    {
+                        for($x = 0; $x < count($retiros['titulo']); $x++)
+                        {
+                            echo '
+                                <div class="col-lg-4 col-md-6 ">
+                                    <div class="single-feature mb-30 ">
+                                        <div class="title d-flex flex-row pb-20 ">
+                                            <span class="lnr lnr-user "></span>
+                                            <h4><a href="">'.strtoupper($retiros['titulo'][$x]).'</a></h4>
+                                        </div>
+                                        <p><a href="">'.$retiros['descripcion'][$x].'</a></p>
+                                    </div>
+                                </div>
+                            ';
+                        }
+                    }
+
+                    else
+                        echo '<h3>No existen retiros publicados.</h3>';
+                ?>
             </div>
         </div>
     </section>

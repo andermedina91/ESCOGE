@@ -71,6 +71,36 @@
         return $data ?? 0;
     }
 
+    //INICIO DE EVENTOS
+
+    function retiros ()
+    {
+        include_once('conexion.php');
+
+        $query = "
+            SELECT
+                *
+            FROM
+                info_retiro
+        ";
+
+        // guardo los resultados de la consulta
+        $result = $conn->query($query);
+
+        // cierro la conexion a la base de datos
+        $conn->close();
+
+        // recorriendo los resultados de la consulta
+        while($row = $result->fetch_assoc())
+        {
+            $data['titulo'][] = $row['titulo'];
+            $data['descripcion'][] = $row['descripcion'];
+        }
+
+        return $data ?? 0;
+    }
+
+
 
     
 ?>
