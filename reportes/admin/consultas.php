@@ -70,7 +70,7 @@
         return $data ?? 0;
     }
 
-    //INICIO DE EVENTOS
+    //INICIO DE RETIRO
 
     function retiros ()
     {
