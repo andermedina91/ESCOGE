@@ -83,7 +83,38 @@
     <!-- FINAL DEL NAVBAR -->
     <span class="ir-arriba icon-circle-up "></span>
     <section class="default-banner active-blog-slider ">
-        <div class="item-slider relative " style="background: url(img/jmd.jpg);background-size: cover; ">
+    <?php
+        require_once('reportes/admin/consultas.php');
+
+        $albums = galleries();
+
+        if(! empty($albums))
+        {
+            for($x = 0; $x < count($albums['titulo']); $x++)
+            {
+                echo '
+                    <div class="item-slider relative" style="background: url('. substr($albums['imagen'][$x], 6) .'); background-size: cover; ">
+                        <div class="overlay " style="background: rgba(0,0,0,.3) "></div>
+                        <div class="container ">
+                            <div class="row fullscreen justify-content-center align-items-center ">
+                                <div class="col-md-10 col-12 ">
+                                    <div class="banner-content text-center ">
+                                        <h2 class="text-white mb-20 text-uppercase ">'. $albums['titulo'][$x] .'</h2>
+                                        <h3 class="text-uppercase text-white ">'. $albums['subtitulo'][$x] .'</h3>
+                                        
+                                        <p class="text-white ">'. $albums['descripcion'][$x] .'</p>
+                                        <a href="mostrargaleria.php?gallery='.$albums['slug'][$x].'" class="text-uppercase header-btn " target="_blank">Ver Mas Imagenes</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                ';
+            }
+        }
+    ?>
+        <!-- <div class="item-slider relative " style="background: url(img/jmd.jpg);background-size: cover; ">
             <div class="overlay " style="background: rgba(0,0,0,.3) "></div>
             <div class="container ">
                 <div class="row fullscreen justify-content-center align-items-center ">
@@ -99,6 +130,7 @@
                 </div>
             </div>
         </div>
+
         <div class="item-slider relative " style="background: url(img/santiago.jpg);background-size: cover; ">
             <div class="overlay " style="background: rgba(0,0,0,.3) "></div>
             <div class="container ">
@@ -114,6 +146,7 @@
                 </div>
             </div>
         </div>
+
         <div class="item-slider relative " style="background: url(img/sfm.jpg);background-size: cover; ">
             <div class="overlay " style="background: rgba(0,0,0,.3) "></div>
             <div class="container ">
@@ -128,7 +161,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 
@@ -139,7 +172,6 @@
                 <div class="menu-content pb-40 col-lg-8 ">
                     <div class="title text-center ">
                         <h2 class="mb-10 ">"UNIDOS TODOS PARA QUE EL MUNDO CREA "</h2>
-
                     </div>
                 </div>
             </div>
@@ -209,7 +241,7 @@
             <div class="single-info row mt-40 " id="escogerd">
                 <div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left ">
                     <div class="info-thumb ">
-                        <img src="img/historia.png " class="img-fluid " height="800 " width="500 ">
+                        <img src="img/historia.png " class="img-fluid " height="800 " width="100% ">
                         <p>
                             <h3>Primeros Dominicano en vivir la Experiencia Escoge en Mexico</h3>
                         </p>

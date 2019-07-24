@@ -9,14 +9,15 @@
     // otros datos del formulario
     $titulo = $_POST['title'];
     $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $titulo)));
+    $subtitulo =$_POST['subtitulo'];
     $descripcion = $_POST['description'];
 
     // guardando la info. en la entidad Albums
     $query = "
         INSERT INTO
-            albums (titulo, slug, descripcion)
+            albums (titulo, slug, subtitulo, descripcion)
         VALUES
-            ('$titulo', '$slug', '$descripcion')
+            ('$titulo', '$slug','$subtitulo', '$descripcion')
     ";
 
     // verifico si la sentencia se ha ejecutado correctamente

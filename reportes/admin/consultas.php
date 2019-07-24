@@ -29,6 +29,7 @@
         while($row = $result->fetch_assoc())
         {
             $data['titulo'][] = $row['titulo'];
+            $data['subtitulo'][] = $row['subtitulo'];
             $data['slug'][] = $row['slug'];
             $data['descripcion'][] = $row['descripcion'];
             $data['imagen'][] = $row['imagen'];
@@ -103,7 +104,7 @@
 
     function carousel ()
     {
-        include_once('conexion.php');
+        include('conexion.php');
 
         $query = "
            
@@ -132,7 +133,7 @@
 
     function eventos ()
     {
-        include_once('conexion.php');
+        include('conexion.php');
 
         $query = "
             SELECT
