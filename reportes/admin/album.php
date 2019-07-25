@@ -36,11 +36,16 @@
     else
         echo $conn->error;
 
+    // obtener la fecha actual
+    $fecha = new DateTime();
+
     // ciclo para recorrer todas las imagenes que vienen desde el formulario
     for($x = 0; $x < count($_FILES['imagenes']['name']); $x++)
     {
+        $image_arr = explode('.', $_FILES['imagenes']['name'][$x]);
+    
         // armo la ruta completa en donde se va a guardar la imagen
-        $complete_path = $path . $_FILES['imagenes']['name'][$x];
+        $complete_path = $path . $image_arr[0] . $fecha->getTimestamp() . $image_arr[1];
 
         // muevo las imagenes al directorio especificado en la variable: $path
         if(move_uploaded_file($_FILES['imagenes']['tmp_name'][$x], $complete_path))

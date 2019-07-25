@@ -51,6 +51,7 @@ dbreporte.get().then(function(querySnapshot) {
     $('#dataTable').DataTable({
         responsive: true,
         dom: 'Bfrtip',
+        // strins = 'Exportar',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
