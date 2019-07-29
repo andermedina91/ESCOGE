@@ -14,7 +14,17 @@
                     WHERE
                         a.id_album = b.id_album
                     LIMIT 1
-                ) AS imagen
+                ) AS imagen,
+
+                (
+                    SELECT
+                        b.id_detalle
+                    FROM
+                        album_imagenes as b
+                    WHERE
+                        a.id_album = b.id_album
+                    LIMIT 1
+                ) AS id_detalle
             FROM
                 albums as a
         ";
@@ -35,6 +45,7 @@
             $data['descripcion'][] = $row['descripcion'];
             $data['imagen'][] = $row['imagen'];
             $data['fecha'][] = $row['fecha_creacion'];
+            $data['id_detalle'][] = $row['id_detalle'];
         }
 
         return $data ?? 0;
@@ -43,7 +54,7 @@
 
     function getGallery ($slug_or_id)
     {
-        include_once('conexion.php');
+        include('conexion.php');
 
         $query = "
             SELECT
@@ -71,6 +82,7 @@
             $data['titulo'][] = $row['titulo'];
             $data['descripcion'][] = $row['descripcion'];
             $data['imagen'][] = $row['imagen'];
+            $data['id_detalle'][] = $row['id_detalle'];
         }
 
         return $data ?? 0;

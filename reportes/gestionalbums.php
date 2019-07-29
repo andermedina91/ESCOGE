@@ -369,20 +369,7 @@
             </div>
           </div>
           
-          <?php
-            if(isset($_GET['album']))
-            {
-                // $album = getGallery($_GET['album']);
 
-                // if(! empty($album))
-                // {
-                //     for($x = 0; $x < count($album['titulo']); $x++)
-                //     {
-                //         //
-                //     }
-                // }
-            }
-          ?>
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -391,45 +378,30 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-3">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <img class="img" style="width: 100%; border-radius: 25%;" src="../img/albums/11564238976.jpg" alt="">
+                    <?php
+                        if(isset($_GET['album']))
+                        {
+                            $album = getGallery($_GET['album']);
 
-                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="1">
-                                </label>
-                            </div>
-                        </div>
+                            if(! empty($album))
+                            {
+                                for($x = 0; $x < count($album['id_detalle']); $x++)
+                                {
+                                    echo '
+                                        <div class="col-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <img class="img" style="width: 100%; border-radius: 25%;" src="'. substr($album['imagen'][$x], 3) .'" alt="">
 
-                        <div class="col-3">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <img class="img" style="width: 100%; border-radius: 25%;" src="../img/albums/11564238976.jpg" alt="">
-
-                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="2">
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="col-3">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <img class="img" style="width: 100%; border-radius: 25%;" src="../img/albums/11564238976.jpg" alt="">
-
-                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="3">
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="col-3">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <img class="img" style="width: 100%; border-radius: 25%;" src="../img/albums/11564238976.jpg" alt="">
-
-                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="4">
-                                </label>
-                            </div>
-                        </div>
+                                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="'.$album['id_detalle'][$x].'">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    ';
+                                }
+                            }
+                        }
+                        ?>
 
                         <div class="col-md-12" style="margin-top: 20px;">
                             <button class="btn btn-success btn-block">Establecer imagen como principal del album</button>
@@ -496,6 +468,12 @@
   <script>
     $( "input" ).on("click", function() {
         console.log($("input:checked").attr("data-image-id") + " is checked!");
+    });
+
+    //ajax
+
+    $.ajax({
+        //
     });
   </script>
 
