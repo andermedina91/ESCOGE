@@ -18,6 +18,8 @@ var config = {
 var app = firebase.initializeApp(config);
 db = firebase.firestore(app);
 
+var pattern = elem.getAttribute("pattern");
+
 // var database = firebase.firestore(app);
 
 // Opciones de fecha
@@ -68,6 +70,8 @@ function CreateFicha() {
 
 
     // Validar  campo nombre
+
+
 
 
     //Swal.fire('El campo nombre esta vacio!')

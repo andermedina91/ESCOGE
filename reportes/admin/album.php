@@ -45,7 +45,7 @@
         $image_arr = explode('.', $_FILES['imagenes']['name'][$x]);
     
         // armo la ruta completa en donde se va a guardar la imagen
-        $complete_path = $path . $image_arr[0] . $fecha->getTimestamp() . $image_arr[1];
+        $complete_path = $path . $image_arr[0] . $fecha->getTimestamp() . '.' . $image_arr[1];
 
         // muevo las imagenes al directorio especificado en la variable: $path
         if(move_uploaded_file($_FILES['imagenes']['tmp_name'][$x], $complete_path))

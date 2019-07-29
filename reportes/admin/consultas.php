@@ -28,18 +28,20 @@
         // recorriendo los resultados de la consulta
         while($row = $result->fetch_assoc())
         {
+            $data["id_album"][] = $row['id_album'];
             $data['titulo'][] = $row['titulo'];
             $data['subtitulo'][] = $row['subtitulo'];
             $data['slug'][] = $row['slug'];
             $data['descripcion'][] = $row['descripcion'];
             $data['imagen'][] = $row['imagen'];
+            $data['fecha'][] = $row['fecha_creacion'];
         }
 
         return $data ?? 0;
     }
 
 
-    function getGallery ($slug)
+    function getGallery ($slug_or_id)
     {
         include_once('conexion.php');
 
@@ -51,7 +53,10 @@
                     INNER JOIN
                 album_imagenes as b on a.id_album = b.id_album
             WHERE
-                a.slug = '$slug'
+                (CASE
+                    WHEN '$slug_or_id' REGEXP '^-?[0-9]+$' THEN a.id_album = '$slug_or_id'
+                    ELSE a.slug = '$slug_or_id'
+                END)
         ";
 
         // guardo los resultados de la consulta
