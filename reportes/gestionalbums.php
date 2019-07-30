@@ -404,7 +404,7 @@
                         ?>
 
                         <div class="col-md-12" style="margin-top: 20px;">
-                            <button class="btn btn-success btn-block">Establecer imagen como principal del album</button>
+                            <button class="btn btn-success btn-block btn-enviar">Establecer imagen como principal del album</button>
                         </div>
                     </div>
                 </div>
@@ -466,14 +466,22 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <script>
-    $( "input" ).on("click", function() {
-        console.log($("input:checked").attr("data-image-id") + " is checked!");
-    });
+    // $( "input" ).on("click", function() {
+    //     console.log($("input:checked").attr("data-image-id") + " is checked!");
+    // });
 
     //ajax
-
-    $.ajax({
-        //
+    $(".btn-enviar").on("click", function () {
+      $.ajax({
+          type: "POST",
+          url: 'admin/gestionar_album.php',
+          data: { 'id_imagen': $("input:checked").attr("data-image-id") },
+          success: function(response)
+          {
+              if(response)
+                alert('Imagen establecida como principal.');
+          }
+      });
     });
   </script>
 
