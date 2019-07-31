@@ -38,6 +38,7 @@
 
     // obtener la fecha actual
     $fecha = new DateTime();
+    $es_principal = 1;
 
     // ciclo para recorrer todas las imagenes que vienen desde el formulario
     for($x = 0; $x < count($_FILES['imagenes']['name']); $x++)
@@ -50,11 +51,14 @@
         // muevo las imagenes al directorio especificado en la variable: $path
         if(move_uploaded_file($_FILES['imagenes']['tmp_name'][$x], $complete_path))
         {
+            if($x > 0)
+                $es_principal = 0;
+
             $query = "
                 INSERT INTO
-                    album_imagenes (id_album, imagen)
+                    album_imagenes (id_album, imagen. es_principal)
                 VALUES
-                    ('$id_album', '$complete_path')
+                    ('$id_album', '$complete_path', '$es_principal')
             ";
 
             $conn->query($query);
@@ -63,6 +67,6 @@
 
     $conn->close();
 
-    header('Location: http://localhost/ESCOGE/reportes/');
+    header('Location: /reportes/gestionalbums.php');
 
 ?>

@@ -388,15 +388,28 @@
                             {
                                 for($x = 0; $x < count($album['id_detalle']); $x++)
                                 {
+                                  if($album['es_principal'][$x])
+                                  {
+                                    $seleccionado = 'checked';
+                                    $display = 'style="display:initial"';
+                                  }
+                                    
+                                  else
+                                  {
+                                    $display = 'style="display:none"';
+                                    $seleccionado = null;
+                                  }
+                                    
                                     echo '
-                                        <div class="col-3">
-                                            <div class="form-check-inline">
+                                        <div class="col-3 mb-4 text-center">
+                                            <div class="form-check-inline" id="block_img_principal">
                                                 <label class="form-check-label">
                                                     <img class="img" style="width: 100%; border-radius: 25%;" src="'. substr($album['imagen'][$x], 3) .'" alt="">
 
-                                                    <input type="radio" class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="'.$album['id_detalle'][$x].'">
+                                                    <input type="radio" '.$seleccionado.' class="form-check-input check-image" style="display: block; margin: 0 auto; margin-top: 0px; text-align: center; margin-top: 10px;" name="radio-image" id="radio-image" data-image-id="'.$album['id_detalle'][$x].'" data-album-id="'.$album['id_album'][$x].'">
                                                 </label>
                                             </div>
+                                            <p id="img_principal" class="img_principal" '.$display.' class="text-center text-primary">Imagen Seleccionada</p>
                                         </div>
                                     ';
                                 }
@@ -467,25 +480,43 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <script>
-    // $( "input" ).on("click", function() {
-    //     console.log($("input:checked").attr("data-image-id") + " is checked!");
-    // });
+    $( "input" ).on("click", function() {
+      // oculto todos los elementos
+      $('.img_principal').css({'display': 'none'});
+
+      // habilito el texto de la imagen que se selecciono
+      if($("#block_img_principal input:checked"))
+      {
+        $("#block_img_principal input:checked").parent().parent().parent().find('p').css({'display': 'initial'})
+      }
+    });
 
     //ajax
     $(".btn-enviar").on("click", function () {
       $.ajax({
           type: "POST",
           url: 'admin/gestionar_album.php',
-          data: { 'id_imagen': $("input:checked").attr("data-image-id") },
+          data: { 'id_imagen': $("input:checked").attr("data-image-id"), 'id_album': $("input:checked").attr("data-album-id")  },
           success: function(response)
           {
               if(response)
-                alert('Imagen establecida como principal.');
+              {
+                  if($('#img_principal').css('style') == 'initial')
+                    $('#img_principal').css({'display': 'none'});
+
+                  $('#img_principal').css({'display': 'none'});
+
+                  if($("#block_img_principal input:checked"))
+                  {
+                    $("#block_img_principal input:checked").parent().parent().parent().find('p').css({'display': 'initial'})
+                  }
+                  
+                  //$("#block_img_principal input:checked").insertAfter('Holaaaaaaaaaaaaaaaa');
+              }
           }
       });
     });
   </script>
 
 </body>
-
 </html>

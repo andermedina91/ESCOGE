@@ -5,8 +5,20 @@
     
     // otros datos del formulario
     $id_imagen = $_POST['id_imagen'];
+    $id_album = $_POST['id_album'];
 
     // actualizzando la info. de la imagen
+    $query = "
+        UPDATE
+            album_imagenes
+        SET
+            es_principal = 0
+        WHERE
+            id_album = '$id_album'
+    ";
+
+    $conn->query($query);
+
     $query = "
         UPDATE
             album_imagenes
@@ -21,5 +33,3 @@
         echo 1;
 
     $conn->close();
-    
-    //header('Location: http://localhost/ESCOGE/reportes/gestionalbums.php');

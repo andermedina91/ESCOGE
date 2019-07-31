@@ -13,7 +13,7 @@
                         album_imagenes as b
                     WHERE
                         a.id_album = b.id_album
-                    LIMIT 1
+                            AND b.es_principal = 1
                 ) AS imagen,
 
                 (
@@ -83,6 +83,8 @@
             $data['descripcion'][] = $row['descripcion'];
             $data['imagen'][] = $row['imagen'];
             $data['id_detalle'][] = $row['id_detalle'];
+            $data['id_album'][] = $row['id_album'];
+            $data['es_principal'][] = $row['es_principal'];
         }
 
         return $data ?? 0;
