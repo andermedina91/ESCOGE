@@ -100,7 +100,8 @@
                         {
                             echo '
                                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="'.$gallery['titulo'][$x].'" data-image="'.substr($gallery['imagen'][$x], 6).'" data-target="#image-gallery">
+                                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="'
+                                    .$gallery['titulo'][$x].'" data-image="'.substr($gallery['imagen'][$x], 6).'" data-target="#image-gallery">
                                         <img class="img-thumbnail" src="'.substr($gallery['imagen'][$x], 6).'" alt="Another alt text">
                                     </a>
                                 </div>
