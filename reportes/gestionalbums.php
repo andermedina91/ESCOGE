@@ -480,7 +480,7 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <script>
-    $( "input" ).on("click", function() {
+    /*$( "input" ).on("click", function() {
       // oculto todos los elementos
       $('.img_principal').css({'display': 'none'});
 
@@ -489,11 +489,13 @@
       {
         $("#block_img_principal input:checked").parent().parent().parent().find('p').css({'display': 'initial'})
       }
-    });
+    });*/
 
     //ajax
     $(".btn-enviar").on("click", function () {
-      $.ajax({
+      if($("input:checked").attr("data-image-id"))
+      {
+        $.ajax({
           type: "POST",
           url: 'admin/gestionar_album.php',
           data: { 'id_imagen': $("input:checked").attr("data-image-id"), 'id_album': $("input:checked").attr("data-album-id")  },
@@ -501,20 +503,21 @@
           {
               if(response)
               {
-                  if($('#img_principal').css('style') == 'initial')
-                    $('#img_principal').css({'display': 'none'});
+                  // oculto todos los elementos
+                  $('.img_principal').css({'display': 'none'});
 
-                  $('#img_principal').css({'display': 'none'});
-
+                  // habilito el texto de la imagen que se selecciono
                   if($("#block_img_principal input:checked"))
                   {
                     $("#block_img_principal input:checked").parent().parent().parent().find('p').css({'display': 'initial'})
                   }
-                  
-                  //$("#block_img_principal input:checked").insertAfter('Holaaaaaaaaaaaaaaaa');
               }
           }
-      });
+        });
+      }
+
+      else
+        alert('No se ha seleccionado ninguna imagen o el album seleccionado no tiene imagenes.');
     });
   </script>
 

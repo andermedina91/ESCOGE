@@ -34,7 +34,10 @@
     }
 
     else
+    {
         echo $conn->error;
+        header('Location: /ESCOGE/reportes/gestionalbums.php');
+    }
 
     // obtener la fecha actual
     $fecha = new DateTime();
@@ -56,7 +59,7 @@
 
             $query = "
                 INSERT INTO
-                    album_imagenes (id_album, imagen. es_principal)
+                    album_imagenes (id_album, imagen, es_principal)
                 VALUES
                     ('$id_album', '$complete_path', '$es_principal')
             ";
@@ -67,6 +70,6 @@
 
     $conn->close();
 
-    header('Location: /reportes/gestionalbums.php');
+    header('Location: /ESCOGE/reportes/gestionalbums.php');
 
 ?>

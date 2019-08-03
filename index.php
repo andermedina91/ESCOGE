@@ -93,7 +93,7 @@
             for($x = 0; $x < count($albums['titulo']); $x++)
             {
                 echo '
-                    <div class="item-slider relative" style="background: url('. substr($albums['imagen'][$x], 6) .'); background-size: cover; ">
+                    <div class="item-slider relative" style="background: url('. substr($albums['imagen'][$x], 6) .'); background-size: cover;">
                         <div class="overlay " style="background: rgba(0,0,0,.3) "></div>
                         <div class="container ">
                             <div class="row fullscreen justify-content-center align-items-center ">
