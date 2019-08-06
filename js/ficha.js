@@ -18,8 +18,6 @@ var config = {
 var app = firebase.initializeApp(config);
 db = firebase.firestore(app);
 
-var pattern = elem.getAttribute("pattern");
-
 // var database = firebase.firestore(app);
 
 // Opciones de fecha
@@ -69,34 +67,32 @@ function CreateFicha() {
     var esperas = document.getElementById('id_esperas').value;
 
 
-    // Validar  campo nombre
 
 
-
-
-    //Swal.fire('El campo nombre esta vacio!')
-    // if (!nombre.length) {
-    //alert('el campo nombre esta vacio!');
+    // Swal.(!nombre.length) {
+    //     ('El Campo nombre esta vacio ')
+    // }
+    // Validar  campo Apellido
     if (!nombre.length) {
-        alert('el campo Apellido esta vacio!');
-        //Swal.fire('El campo nombre esta vacio!');
+        alert('El campo Nombre esta vacio!');
         return 0;
     }
 
+
     // Validar  campo Apellido
     if (!apellido.length) {
-        alert('el campo Apellido esta vacio!');
+        alert('El campo Apellido esta vacio!');
         return 0;
     }
     // Validar  campo identidad
     if (!identidad.length) {
-        alert('el campo Identidad esta vacio!');
+        alert('El campo Identidad esta vacio!');
         return 0;
     }
 
     // Validar  campo edad
     if (!edad.length) {
-        alert('el campo Edad esta vacio!');
+        alert('El campo Edad esta vacio!');
         return 0;
     }
 
@@ -108,23 +104,23 @@ function CreateFicha() {
 
     // Validar  campo Estado Civil
     if (!ecivil.length) {
-        alert('el campo Estado Civil esta vacio!');
+        alert('El campo Estado Civil esta vacio!');
         return 0;
     }
 
     // Validar  campo nombre
     if (!phone.length) {
-        alert('el campo Telefono esta vacio!');
+        alert('El campo Telefono esta vacio!');
         return 0;
     }
 
     if (!diocesis.length) {
-        alert('el campo Diocesis/ Arquidiocesis esta vacio!');
+        alert('El campo Diocesis/ Arquidiocesis esta vacio!');
         return 0;
     }
 
     if (!ciudad.length) {
-        alert('el campo Ciudad esta vacio!');
+        alert('El campo Ciudad esta vacio!');
         return 0;
     }
 
