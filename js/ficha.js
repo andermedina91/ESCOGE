@@ -90,6 +90,12 @@ function CreateFicha() {
         return 0;
     }
 
+    if(identidad.length != 11){
+        alert('El campo Identidad esta invalido!');//-------------modificar mensaje
+        return 0;
+    }
+
+
     // Validar  campo edad
     if (!edad.length) {
         alert('El campo Edad esta vacio!');

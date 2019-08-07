@@ -451,7 +451,7 @@
     <br>
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Ander Medina &copy; Todos los derechos Reservado 2019</span>
+            <span>Ander Medina; Todos los derechos Reservado 2019</span>
         </div>
     </div>
 </footer>

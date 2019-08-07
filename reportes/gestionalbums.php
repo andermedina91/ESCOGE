@@ -431,11 +431,14 @@
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
-          </div>
+      <br>
+    <br>
+    <br>
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Ander Medina; Todos los derechos Reservado 2019</span>
         </div>
+    </div>
       </footer>
       <!-- End of Footer -->
 

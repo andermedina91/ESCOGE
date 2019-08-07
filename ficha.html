@@ -125,7 +125,7 @@
                                                                 <i class="fa fa-user"></i>
                                                             </div>
                                                             <input name="Nombre" id="id_nombre" placeholder="Introduzca sus nombre " onfocus="this.placeholder=''
-                                                             " onblur="this.placeholder='Introdusca sus nombre' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                             " onblur="this.placeholder='Introduzca sus nombre' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -133,7 +133,7 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
-                                                            <input name="Apellido " id="id_apellido" placeholder="Introduzca sus Apellidos " onfocus="this.placeholder='' " onblur="this.placeholder='Introdusca sus Apellidos' " class="common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="Apellido " id="id_apellido" placeholder="Introduzca sus Apellidos " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca sus Apellidos' " class="common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -141,8 +141,11 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-address-card"></i>
                                                             </div>
-                                                            <input name="identidad" id="id_identidad" placeholder="Introduzca su Cedula " onfocus="this.placeholder='' " onblur="this.placeholder='Introdusca su Cedula' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="identidad" id="id_identidad" placeholder="Introduzca su Cedula " onfocus="this.placeholder='' " onkeypress="return validar(event)" onblur="this.placeholder='Introduzca su Cedula' " maxlength="11" class=" common-input mb-20 form-control "
+                                                                required=" " type="text ">
                                                         </div>
+
+
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
                                                         <div class="input-group">
@@ -150,7 +153,7 @@
                                                                 <i class="fa fa-birthday-cake"></i>
                                                             </div>
                                                             <input name="C_edad" id="id_edad" placeholder="Introduzca su Edad " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introdusca su Edad' " class="common-input mb-20 form-control " required=" " type="number">
+                                                            " onblur="this.placeholder='Introduzca su Edad' " class="common-input mb-20 form-control " required=" " type="number">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -215,7 +218,7 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-map-o"></i>
                                                             </div>
-                                                            <input name="direccion" id="id_direccion" placeholder="Introduzca su Direccion " onfocus="this.placeholder='' " onblur="this.placeholder='Introdusca su Direccion' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="direccion" id="id_direccion" placeholder="Introduzca su Direccion " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca su Direccion' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
 
@@ -273,7 +276,7 @@
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
                                                             <input name="phone " id="id_phone" title="Introduzca su Celular" placeholder="Celular " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su Telefono' " class="common-input mb-20 form-control " required=" " type="phone">
+                                                            " onblur="this.placeholder='Introduzca su Telefono' " onkeypress="return validar(event)" maxlength="10" class="common-input mb-20 form-control " required=" " type="phone">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -291,8 +294,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
-                                                            <input name="ttrabajo" id="ttrabajo" title="Introdusca Telefono de su trabajo." placeholder="Tel. del trabajo " onfocus="this.placeholder=''
-                                                             " onblur="this.placeholder='Introdusca Telefono de su trabajo' " class="common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="ttrabajo" id="ttrabajo" title="Introduzca Telefono de su trabajo." placeholder="Tel. del trabajo " onfocus="this.placeholder=''
+                                                             " onblur="this.placeholder='Introduzca Telefono de su trabajo' " onkeypress="return validar(event)" maxlength="11" class="common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -440,7 +443,7 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
-                                                    <input name="ttutores" id="id_ttutores" placeholder="Tel. De con quien vives " onfocus="this.placeholder=''
+                                                    <input name="ttutores" id="id_ttutores" onkeypress="return validar(event)" maxlength="10" placeholder="Tel. De con quien vives " onfocus="this.placeholder=''
                                                      " onblur="this.placeholder='Con Quien Vives?' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                 </div>
                                             </div>
@@ -464,7 +467,7 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
-                                                    <input name="telpadre" id="id_telpadre" placeholder="Telefono del Padre " onfocus="this.placeholder=''
+                                                    <input name="telpadre" id="id_telpadre" onkeypress="return validar(event)" maxlength="10" placeholder="Telefono del Padre " onfocus="this.placeholder=''
                                                      " onblur="this.placeholder='Telefono del Padre' " class=" common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
@@ -488,7 +491,7 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
-                                                    <input name="telmadre" id="id_telmadre" placeholder="Telefono del Madre " onfocus="this.placeholder=''
+                                                    <input name="telmadre" id="id_telmadre" onkeypress="return validar(event)" maxlength="10" placeholder="Telefono del Madre " onfocus="this.placeholder=''
                                                      " onblur="this.placeholder='Telefono del Madre' " class=" common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
@@ -637,6 +640,14 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Ander Medina; Todos los derechos Reservado 2019</span>
+        </div>
+    </div>
 </footer>
 <!-- FINAL DEL FOOTER -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -690,6 +701,41 @@ Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
         else
             $('#id_Confirmacion').prop("disabled", true);
     });
+
+    function validar(e) {
+        tecla = (document.all) ? e.keyCode : e.which;
+
+        //Tecla de retroceso para borrar, siempre la permite
+        if (e.which == 13) {
+            e.preventDefault();
+            var $this = $(e.target);
+            //var index = parseFloat($this.attr('data-index'));
+            //$('[data-index="' + (index + 1).toString() + '"]').focus();
+            var $inp = $('input:text');
+
+            var nxtIdx = $inp.index($this) + 1;
+            var idxactual = $inp.index($this);
+            $(":input:text:eq(" + nxtIdx + ")").focus();
+
+        }
+
+        if (tecla == 196) {
+            return true;
+        }
+        // Patron de entrada, en este caso solo acepta numeros
+        patron = /[0-9]/;
+        tecla_final = String.fromCharCode(tecla);
+        return patron.test(tecla_final);
+
+    }
 </script>
+
+</html>
+
+</html>
+
+</html>
+
+</html>
 
 </html>
