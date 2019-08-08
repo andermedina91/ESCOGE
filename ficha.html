@@ -133,7 +133,7 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
-                                                            <input name="Apellido " id="id_apellido" placeholder="Introduzca sus Apellidos " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca sus Apellidos' " class="common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="Apellido " id="id_apellido" placeholder="Introduzca sus apellidos " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca sus apellidos' " class="common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -141,9 +141,15 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-address-card"></i>
                                                             </div>
-                                                            <input name="identidad" id="id_identidad" placeholder="Introduzca su Cedula " onfocus="this.placeholder='' " onkeypress="return validar(event)" onblur="this.placeholder='Introduzca su Cedula' " maxlength="11" class=" common-input mb-20 form-control "
-                                                                required=" " type="text ">
+                                                            <input name="identidad " title="Introduzca su cedula" id="id_identidad" placeholder="Celular " onfocus="this.placeholder='' 
+                                                            " onblur="this.placeholder='Introduzca su cedula' " onkeypress="return validar(event)" class="cedula_ddd" 
+                                                            maxlength="13" class="common-input mb-20 form-control " required=" " type="text">
+
+                                                            
+                                                            <!-- <input name="identidad" id="id_identidad" title="Introduzca su cedula" class="cedula_ddd" maxlength="15" placeholder="Introduzca su cedula " onfocus="this.placeholder='' " onkeypress="return validar(event)" onblur="this.placeholder='Introduzca su cedula' " class=" common-input mb-20 form-control "
+                                                                required=" " type="text "> -->
                                                         </div>
+                                                        
 
 
                                                     </div>
@@ -152,8 +158,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-birthday-cake"></i>
                                                             </div>
-                                                            <input name="C_edad" id="id_edad" placeholder="Introduzca su Edad " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su Edad' " class="common-input mb-20 form-control " required=" " type="number">
+                                                            <input name="C_edad" id="id_edad" placeholder="Introduzca su edad " onfocus="this.placeholder='' 
+                                                            " onblur="this.placeholder='Introduzca su edad' " class="common-input mb-20 form-control " required=" " type="number">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -183,8 +189,8 @@
                                                                 <option value="estadocivil">Estado Civil</option>
                                                                 <option value="consagrado">Casado (consagrado)</option>
                                                                 <option value="soltero">Soltero</option>
-                                                                <option value="padre soltero">Padre Soltero</option>
-                                                                <option value="madre soltera">Madre Soltera</option>
+                                                                <option value="padre soltero">Padre soltero</option>
+                                                                <option value="madre soltera">Madre soltera</option>
                                                                 <option value="sacerdote">Sacerdotes</option>
                                                                 <option value="religiosas">Religiosas</option>
 
@@ -196,8 +202,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-calendar"></i>
                                                             </div>
-                                                            <input id="id_fecha" name="fecha" placeholder="Fecha de Nacimiento  " onfocus="this.placeholder=''
-                                                             " onblur="this.placeholder='Fecha de Nacimiento' " class=" common-input mb-20 form-control " required=" " type="date">
+                                                            <input id="id_fecha" name="fecha" placeholder="Fecha de nacimiento  " onfocus="this.placeholder=''
+                                                             " onblur="this.placeholder='Fecha de nacimiento' " class=" common-input mb-20 form-control " required=" " type="date">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -218,7 +224,7 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-map-o"></i>
                                                             </div>
-                                                            <input name="direccion" id="id_direccion" placeholder="Introduzca su Direccion " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca su Direccion' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="direccion" id="id_direccion" placeholder="Introduzca su direccion " onfocus="this.placeholder='' " onblur="this.placeholder='Introduzca su direccion' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
 
@@ -266,8 +272,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-map-marker"></i>
                                                             </div>
-                                                            <input name="ciudad" id="id_ciudad" placeholder="ciudad " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su Ciudad' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="ciudad" id="id_ciudad" placeholder="Ciudad " onfocus="this.placeholder='' 
+                                                            " onblur="this.placeholder='Introduzca su ciudad' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -275,8 +281,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
-                                                            <input name="phone " id="id_phone" title="Introduzca su Celular" placeholder="Celular " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su Telefono' " onkeypress="return validar(event)" maxlength="10" class="common-input mb-20 form-control " required=" " type="phone">
+                                                            <input name="phone " title="Introduzca su celular" id="id_phone" placeholder="Celular " onfocus="this.placeholder='' 
+                                                            " onblur="this.placeholder='Introduzca su celefono' " onkeypress="return validar(event)" class="phone_with_ddd" maxlength="15" class="common-input mb-20 form-control " required=" " type="phone">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 form-group ">
@@ -284,8 +290,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-address-card"></i>
                                                             </div>
-                                                            <input name="trabajo" id="id_dtrabajo" title="Lugar de usted Trabaja" placeholder="Lugar de Trabajo  " onfocus="this.placeholder=''
-                                                             " onblur="this.placeholder='Lugar de Trabajo' " class=" common-input mb-20 form-control " required="
+                                                            <input name="trabajo" id="id_dtrabajo" title="Lugar de usted trabaja" placeholder="Lugar de trabajo  " onfocus="this.placeholder=''
+                                                             " onblur="this.placeholder='Lugar de trabajo' " class=" common-input mb-20 form-control " required="
                                                               " type="text ">
                                                         </div>
                                                     </div>
@@ -294,8 +300,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
-                                                            <input name="ttrabajo" id="ttrabajo" title="Introduzca Telefono de su trabajo." placeholder="Tel. del trabajo " onfocus="this.placeholder=''
-                                                             " onblur="this.placeholder='Introduzca Telefono de su trabajo' " onkeypress="return validar(event)" maxlength="11" class="common-input mb-20 form-control " required=" " type="text ">
+                                                            <input name="ttrabajo" id="ttrabajo" title="Introduzca telefono de su trabajo." placeholder="Tel. del trabajo " onfocus="this.placeholder=''
+                                                             " onblur="this.placeholder='Introduzca telefono de su trabajo' " onkeypress="return validar(event)" maxlength="11" class="common-input mb-20 form-control " required=" " type="text ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,7 +365,7 @@
                                                                 <i class="fa fa-university"></i>
                                                             </div>
                                                             <select id="id_Confirmacion" class="form-control">
-                                                                <option value="0">confirmación </option>
+                                                                <option value="0">Confirmación </option>
                                                                 <option value="SI">SI</option>
                                                                 <option value="NO">NO</option>
 
@@ -373,8 +379,8 @@
                                                             <div class="input-group-addon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
-                                                            <input name="size" id="id_size" title="Este campo sera tomado en cuenta para el t-shirt." placeholder="Introduzca su SIZE" onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su SIZE' " class="common-input mb-20 form-control " required=" " type="date ">
+                                                            <input name="size" id="id_size" title="Este campo sera tomado en cuenta para el t-shirt." placeholder="Introduzca su Size" onfocus="this.placeholder='' 
+                                                            " onblur="this.placeholder='Introduzca su Size' " class="common-input mb-20 form-control " required=" " type="date ">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -412,8 +418,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
-                                                    <input name="tutores" id="id_tutores" placeholder="Con Quien Vives? " onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Con Quien Vives?' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                    <input name="tutores" id="id_tutores" placeholder="Con quien vives? " onfocus="this.placeholder=''
+                                                     " onblur="this.placeholder='Con quien vives?' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 form-group ">
@@ -434,8 +440,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
-                                                    <input name="ntutores" id="id_ntutores" placeholder="Nombre con quien Vives " onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Nombre con quien Vives' " class="common-input mb-20 form-control " required=" " type="text ">
+                                                    <input name="ntutores" id="id_ntutores" placeholder="Nombre con quien vives " onfocus="this.placeholder=''
+                                                     " onblur="this.placeholder='Nombre con quien vives' " class="common-input mb-20 form-control " required=" " type="text ">
                                                 </div>
                                             </div>
                                             <div class="col-lg-3 form-group ">
@@ -443,8 +449,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
-                                                    <input name="ttutores" id="id_ttutores" onkeypress="return validar(event)" maxlength="10" placeholder="Tel. De con quien vives " onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Con Quien Vives?' " class=" common-input mb-20 form-control " required=" " type="text ">
+                                                    <input name="ttutores" id="id_ttutores" onkeypress="return validar(event)" maxlength="10" placeholder="Tel. de con quien vives " onfocus="this.placeholder=''
+                                                     " onblur="this.placeholder='Tel. de con quien vives' " class=" common-input mb-20 form-control " required=" " type="text ">
                                                 </div>
                                             </div>
                                         </div>
@@ -457,8 +463,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
-                                                    <input name="npadres" id="id_npadres" placeholder="Nombres de Padre" onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Nombre con quien Vives' " class="common-input mb-20 form-control " required=" " type="text">
+                                                    <input name="npadres" id="id_npadres" placeholder="Nombres de padre" onfocus="this.placeholder=''
+                                                     " onblur="this.placeholder='Nombre de padre' " class="common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
 
@@ -482,7 +488,7 @@
                                                         <i class="fa fa-user"></i>
                                                     </div>
                                                     <input name="nmadres" id="id_nmadres" placeholder="Nombre de la Madre" onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Nombre de la Madre' " class="common-input mb-20 form-control " required=" " type="text">
+                                                     " onblur="this.placeholder='Nombre de la madre' " class="common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
 
@@ -491,8 +497,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
-                                                    <input name="telmadre" id="id_telmadre" onkeypress="return validar(event)" maxlength="10" placeholder="Telefono del Madre " onfocus="this.placeholder=''
-                                                     " onblur="this.placeholder='Telefono del Madre' " class=" common-input mb-20 form-control " required=" " type="text">
+                                                    <input name="telmadre" id="id_telmadre" onkeypress="return validar(event)" maxlength="10" placeholder="Telefono del madre " onfocus="this.placeholder=''
+                                                     " onblur="this.placeholder='Telefono del madre' " class=" common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
 
@@ -515,8 +521,8 @@
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </div>
-                                                    <input name="nretiro" id="id_nretiro" placeholder="Nombre Del Retiro Vivido" onfocus="this.placeholder='' 
-                                                    " onblur="this.placeholder='Nombre Del Retiro Vivido' " class=" common-input mb-20 form-control " required=" " type="text">
+                                                    <input name="nretiro" id="id_nretiro" placeholder="Nombre del retiro vivido" onfocus="this.placeholder='' 
+                                                    " onblur="this.placeholder='Nombre del retiro vivido' " class=" common-input mb-20 form-control " required=" " type="text">
                                                 </div>
                                             </div>
 
@@ -530,8 +536,8 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-university"></i>
 
-                                                    <textarea class="common-textarea mt-10 form-control " name="experiencia" id="id_experiencia" placeholder="¿PORQUE QUIERES VIVIR ESTA EXPERIENCIA?   " onfocus="this.placeholder='' 
-                                                    " onblur="this.placeholder='¿PORQUE QUIERES VIVIR ESTA EXPERIENCIA?  ' " required=" "></textarea>
+                                                    <textarea class="common-textarea mt-10 form-control " name="experiencia" id="id_experiencia" placeholder="¿Porque vivir la experiencia?   " onfocus="this.placeholder='' 
+                                                    " onblur="this.placeholder='¿Porque quieres vivir la experiencia?  ' " required=" "></textarea>
 
                                                 </div>
                                             </div>
@@ -541,8 +547,8 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-university"></i>
 
-                                                    <textarea class="common-textarea mt-10 form-control " name="esperas" id="id_esperas" placeholder="¿QUE ESPERAS ENCONTRAR EN ESTE FIN  DE SEMANA?   " onfocus="this.placeholder='' 
-                                                    " onblur="this.placeholder='¿QUE ESPERAS ENCONTRAR EN ESTE FIN  DE SEMANA? ' " required=" "></textarea>
+                                                    <textarea class="common-textarea mt-10 form-control " name="esperas" id="id_esperas" placeholder="¿Que esperar encontrar en este fin de semana?   " onfocus="this.placeholder='' 
+                                                    " onblur="this.placeholder='¿Que esperar vivir en este fin de semana? ' " required=" "></textarea>
 
                                                 </div>
                                             </div>
@@ -633,8 +639,8 @@
                     <div class="footer-social d-flex align-items-center ">
                         <a href="https://www.facebook.com/ "><i class="fa fa-facebook "></i></a>
                         <a href="https://twitter.com/ "><i class="fa fa-twitter "></i></a>
-                        <a href="# "><i class="fa fa-youtube "></i></a>
-                        <a href="# "><i class="fa fa-instagram "></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa fa-youtube "></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa fa-instagram "></i></a>
                     </div>
                 </div>
             </div>
@@ -677,7 +683,20 @@ Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
 <script src="js/main.js "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 <script>
+    $('.phone_with_ddd').mask('(000) 000-0000');
+</script>
+<script>
+    $('.cedula_ddd').mask('000-0000000-0');
+</script>
+
+<script>
+    window.onload = function(){
+        Clear();
+    }
+
     // poniendo disabled a las propiedades inicialmente
     $('#pcomunion').prop("disabled", true);
     $('#id_Confirmacion').prop("disabled", true);
