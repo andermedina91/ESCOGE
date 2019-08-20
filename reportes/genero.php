@@ -1,3 +1,7 @@
+<?php
+require_once('admin/current_user.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +48,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Barra lateral - Marca -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -62,10 +66,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Galerias & Eventos:</h6>
-                        <a class="collapse-item" href="album.html">Album</a>
-                        <a class="collapse-item" href="info_retiro.html">Info Retiros</a>
+                        <a class="collapse-item" href="album.php">Album</a>
+                        <a class="collapse-item" href="info_retiro.php">Info Retiros</a>
                         <a class="collapse-item" href="gestionalbums.php">Geleria Imagen</a>
-                        <a class="collapse-item" href="eventos.html">Eventos</a>
+                        <a class="collapse-item" href="eventos.php">Eventos</a>
 
                     </div>
                 </div>
@@ -84,12 +88,12 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">REPORTES:</h6>
-                        <a class="collapse-item" href="diocesis.html">Diocesis</a>
-                        <a class="collapse-item" href="ciudad.html">Ciudad</a>
-                        <a class="collapse-item" href="estadocivil.html">Estado Civil</a>
-                        <a class="collapse-item" href="genero.html">Genero</a>
-                        <a class="collapse-item" href="religion.html">Religion</a>
-                        <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
+                        <a class="collapse-item" href="diocesis.php">Diocesis</a>
+                        <a class="collapse-item" href="ciudad.php">Ciudad</a>
+                        <a class="collapse-item" href="estadocivil.php">Estado Civil</a>
+                        <a class="collapse-item" href="genero.php">Genero</a>
+                        <a class="collapse-item" href="religion.php">Religion</a>
+                        <a class="collapse-item" href="sacramentos.php">Sacramentos Iniciales</a>
 
 
                     </div>
@@ -109,13 +113,13 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
-                        <a class="collapse-item" href="login.html">Inicio</a>
-                        <a class="collapse-item" href="registro.html">Registrarse</a>
-                        <a class="collapse-item" href="contrasena.html">Olvidaste tu Contraseña</a>
+                        <a class="collapse-item" href="login.php">Inicio</a>
+                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Otras Paginas</h6>
+                        <!-- <h6 class="collapse-header">Otras Paginas</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a> -->
                     </div>
                 </div>
             </li>
@@ -124,7 +128,7 @@
 
             <!-- Objeto de navegación - Tablas -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tablas</span></a>
             </li>
@@ -151,8 +155,8 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
 
@@ -172,8 +176,8 @@
                                         Buscar..." aria-label="Buscar" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
@@ -184,30 +188,30 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information --
+
+                        <!-- Navegar Information usuario -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
-                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                <img class="img-profile rounded-circle" src="img/ander.JPG">
                             </a>
-                        
+                            <!-- Dropdown - Information usuario -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+                                    <!-- <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Ajustes
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>Registro de actividades
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
-                                </a>
+                                </a> -->
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
+                                    </a>
                             </div>
                         </li>
-                    -->
 
                     </ul>
 
@@ -277,15 +281,17 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Listo para salir?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">
+                    Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="login.php">Cerrar Seccion</a>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
+<?php
+    require_once('admin/current_user.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +13,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ESCOGE RD REPORTE ALBUM</title>
+    <title>ESCOGE RD REPORTE DIOCESIS</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://www.citizensfiber.com/assets/DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css">
 
     <!-- Custom styles for this template-->
     <link href="css/reporte.css" rel="stylesheet">
@@ -50,10 +57,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Galerias & Eventos:</h6>
-                        <a class="collapse-item" href="album.html">Album</a>
-                        <a class="collapse-item" href="info_retiro.html">Info Retiros</a>
+                        <a class="collapse-item" href="album.php">Album</a>
+                        <a class="collapse-item" href="info_retiro.php">Info Retiros</a>
                         <a class="collapse-item" href="gestionalbums.php">Geleria Imagen</a>
-                        <a class="collapse-item" href="eventos.html">Eventos</a>
+                        <a class="collapse-item" href="eventos.php">Eventos</a>
 
                     </div>
                 </div>
@@ -72,12 +79,12 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">REPORTES:</h6>
-                        <a class="collapse-item" href="diocesis.html">Diocesis</a>
-                        <a class="collapse-item" href="ciudad.html">Ciudad</a>
-                        <a class="collapse-item" href="estadocivil.html">Estado Civil</a>
-                        <a class="collapse-item" href="genero.html">Genero</a>
-                        <a class="collapse-item" href="religion.html">Religion</a>
-                        <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
+                        <a class="collapse-item" href="diocesis.php">Diocesis</a>
+                        <a class="collapse-item" href="ciudad.php">Ciudad</a>
+                        <a class="collapse-item" href="estadocivil.php">Estado Civil</a>
+                        <a class="collapse-item" href="genero.php">Genero</a>
+                        <a class="collapse-item" href="religion.php">Religion</a>
+                        <a class="collapse-item" href="sacramentos.php">Sacramentos Iniciales</a>
 
 
                     </div>
@@ -97,13 +104,13 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
-                        <a class="collapse-item" href="login.html">Inicio</a>
-                        <a class="collapse-item" href="registro.html">Registrarse</a>
-                        <a class="collapse-item" href="contrasena.html">Olvidaste tu Contraseña</a>
+                        <a class="collapse-item" href="login.php">Inicio</a>
+                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Otras Paginas</h6>
+                        <!-- <h6 class="collapse-header">Otras Paginas</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a> -->
                     </div>
                 </div>
             </li>
@@ -112,7 +119,7 @@
 
             <!-- Objeto de navegación - Tablas -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tablas</span></a>
             </li>
@@ -168,34 +175,32 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information 
-                        <li class="nav-item dropdown no-arrow">
+                       <!-- Navegar Information usuario -->
+                       <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
-                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                <img class="img-profile rounded-circle" src="img/ander.JPG">
                             </a>
-                            -->
-
-                        <!--
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Ajustes
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>Registro de actividades
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
-                            </a>
-                        </div>
+                            <!-- Dropdown - Information usuario -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <!-- <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Ajustes
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>Registro de actividades
+                                </a> -->
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
+                                    </a>
+                            </div>
                         </li>
 
                     </ul>
-                    -->
+                    
 
                 </nav>
                 <!-- End of Topbar -->
@@ -210,37 +215,37 @@
                     </div>
                 -->
 
-                    <!-- INICIO CONTENEDOR -->
+                    <!-- INICIO CONTENEDOR TABLA -->
                     <div class="container-fluid">
-                        <form method="POST" action="admin/album.php" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="title">Titulo del album: <small class="text-danger"><strong>*</strong></small></label>
-                                <input type="text" class="form-control" name="title" id="title" required>
 
-                            </div>
 
-                            <div class="form-group">
-                                <label for="subtitulo">Sub Titulo (Carousel): <small class="text-danger"><strong>*</strong></small></label>
-                                <input type="text" class="form-control" name="subtitulo" id="subtitulo" required>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="description">Descripcion del album: <small class="text-danger"><strong>*</strong></small></label>
-                                <textarea class="form-control" name="description" id="description" cols="30" rows="5"></textarea>
-                            </div>
+                        <!-- Tabla de Informaciones Generales -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Reporte Por Diocesis
 
-                            <div class="form-group">
-                                <label for="imagenes">Cargar imagenes: <small class="text-danger"><strong>*</strong></small></label>
-                                <input type="file" class="form-control" name="imagenes[]" id="imagenes" required="" multiple>
+                                </h6>
                             </div>
+                            <div class="card-body">
+                                <div>
+                                    <table class="table table-bordered display" id="dataTable" width="100%" cellspacing="0">
 
-                            <br>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                                        <thead>
+                                            <tr id="tr">
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Identidad</th>
+                                                <th>Diocesis </th>
+
+
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <!-- FIN CONTENEDOR -->
+                    <!-- FIN CONTENEDOR TABLA -->
 
 
 
@@ -249,9 +254,12 @@
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
+                    <br>
+                    <br>
+                    <br>
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Ander Medina &copy; Todos los derechos Reservado 2019</span>
+                            <span>Ander Medina; Todos los derechos Reservado 2019</span>
                         </div>
                     </div>
                 </footer>
@@ -293,14 +301,31 @@
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+        <!-- Llamando Firebase-->
+
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+        <script src="https://www.citizensfiber.com/assets/DataTables-1.10.7/extensions/Responsive/js/dataTables.responsive.js"></script>
+
+
+        <script src="js/reporte.js"></script>
+        <script src="js/diocesis.js"></script>
+        <script src="js/exportacion.js"></script>
+
+
         <!-- Core plugin JavaScript-->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-
-
-
-
 
 </body>
 

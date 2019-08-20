@@ -1,7 +1,10 @@
+<?php
+    require_once('admin/current_user.php');
+?> 
+
+<!DOCTYPE HTML>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -31,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Barra lateral - Marca -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -96,13 +99,13 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
-                        <a class="collapse-item" href="login.html">Inicio</a>
-                        <a class="collapse-item" href="registro.html">Registrarse</a>
-                        <a class="collapse-item" href="contrasena.html">Olvidaste tu Contraseña</a>
+                        <a class="collapse-item" href="login.php">Inicio</a>
+                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Otras Paginas</h6>
+                        <!-- <h6 class="collapse-header">Otras Paginas</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a> -->
                     </div>
                 </div>
             </li>
@@ -111,7 +114,7 @@
 
             <!-- Objeto de navegación - Tablas -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tablas</span></a>
             </li>
@@ -168,8 +171,8 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Navegar Information usuario -->
-                        <li class="nav-item dropdown no-arrow">
+                       <!-- Navegar Information usuario -->
+                       <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
                                 <img class="img-profile rounded-circle" src="img/ander.JPG">
@@ -191,7 +194,6 @@
                                     </a>
                             </div>
                         </li>
-
 
                     </ul>
 

@@ -46,12 +46,12 @@
                                             <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Entrar con el Correo Eletronico...">
                                         </div>
                                         <a href="login.html" class="btn btn-primary btn-user btn-block">
-                      Reset Password
+                      Restablecer Contraseña
                     </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="registro.html">Crear Cuenta!</a>
+                                        <!-- <a class="small" href="registro.html">Crear Cuenta!</a> -->
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="login.html">¿Ya tienes una cuenta? ¡Iniciar sesión!</a>

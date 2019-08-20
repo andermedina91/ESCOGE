@@ -177,5 +177,31 @@
 
         return $data ?? 0;
     }
-    
+
+    function existUser ($user_name, $pass)
+    {
+        include('conexion.php');
+
+        $query = "
+            SELECT
+                username,
+                password
+            FROM
+                login
+            WHERE
+                username = '$user_name'
+                    and password = '$pass'
+            LIMIT 1
+        ";
+
+        $result = $conn->query($query);
+
+        while($row = $result->fetch_assoc())
+        {
+            $data['username'] = $row['username'];
+            $data['password'] = $row['password'];
+        }
+
+        return isset($data) ? true : false;
+    }    
 ?>

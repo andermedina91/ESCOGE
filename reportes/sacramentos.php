@@ -1,3 +1,7 @@
+<?php
+    require_once('admin/current_user.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +18,6 @@
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="https://www.citizensfiber.com/assets/DataTables-1.10.7/extensions/Responsive/css/dataTables.responsive.css">
 
     <!-- Custom styles for this template-->
     <link href="css/reporte.css" rel="stylesheet">
@@ -35,7 +36,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Barra lateral - Marca -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -53,10 +54,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Galerias & Eventos:</h6>
-                        <a class="collapse-item" href="album.html">Album</a>
-                        <a class="collapse-item" href="info_retiro.html">Info Retiros</a>
+                        <a class="collapse-item" href="album.php">Album</a>
+                        <a class="collapse-item" href="info_retiro.php">Info Retiros</a>
                         <a class="collapse-item" href="gestionalbums.php">Geleria Imagen</a>
-                        <a class="collapse-item" href="eventos.html">Eventos</a>
+                        <a class="collapse-item" href="eventos.php">Eventos</a>
 
                     </div>
                 </div>
@@ -75,12 +76,12 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">REPORTES:</h6>
-                        <a class="collapse-item" href="diocesis.html">Diocesis</a>
-                        <a class="collapse-item" href="ciudad.html">Ciudad</a>
-                        <a class="collapse-item" href="estadocivil.html">Estado Civil</a>
-                        <a class="collapse-item" href="genero.html">Genero</a>
-                        <a class="collapse-item" href="religion.html">Religion</a>
-                        <a class="collapse-item" href="sacramentos.html">Sacramentos Iniciales</a>
+                        <a class="collapse-item" href="diocesis.php">Diocesis</a>
+                        <a class="collapse-item" href="ciudad.php">Ciudad</a>
+                        <a class="collapse-item" href="estadocivil.php">Estado Civil</a>
+                        <a class="collapse-item" href="genero.php">Genero</a>
+                        <a class="collapse-item" href="religion.php">Religion</a>
+                        <a class="collapse-item" href="sacramentos.php">Sacramentos Iniciales</a>
 
 
                     </div>
@@ -100,13 +101,13 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
-                        <a class="collapse-item" href="login.html">Inicio</a>
-                        <a class="collapse-item" href="registro.html">Registrarse</a>
-                        <a class="collapse-item" href="contrasena.html">Olvidaste tu Contraseña</a>
+                        <a class="collapse-item" href="login.php">Inicio</a>
+                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Otras Paginas</h6>
+                        <!-- <h6 class="collapse-header">Otras Paginas</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a> -->
                     </div>
                 </div>
             </li>
@@ -115,7 +116,7 @@
 
             <!-- Objeto de navegación - Tablas -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tablas</span></a>
             </li>
@@ -171,34 +172,32 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information 
-                        <li class="nav-item dropdown no-arrow">
+                      <!-- Navegar Information usuario -->
+                      <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
-                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                <img class="img-profile rounded-circle" src="img/ander.JPG">
                             </a>
-                            -->
-
-                        <!--
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Ajustes
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>Registro de actividades
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
-                            </a>
-                        </div>
+                            <!-- Dropdown - Information usuario -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <!-- <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Ajustes
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>Registro de actividades
+                                </a> -->
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Seccion
+                                    </a>
+                            </div>
                         </li>
 
                     </ul>
-                    -->
+                   
 
                 </nav>
                 <!-- End of Topbar -->
@@ -234,8 +233,9 @@
                                                 <th>Nombre</th>
                                                 <th>Apellido</th>
                                                 <th>Identidad</th>
-                                                <th>Diocesis </th>
-                                                <th>Ciudad </th>
+                                                <th>Bautismo</th>
+                                                <th>Primera Comunion</th>
+                                                <th>Confirmacion</th>
 
                                         </thead>
                                     </table>
@@ -249,6 +249,7 @@
 
                 </div>
                 <!-- End of Main Content -->
+
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
@@ -289,7 +290,7 @@
                         Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" href="login.html">Cerrar Seccion</a>
+                        <a class="btn btn-primary" href="login.php">Cerrar Seccion</a>
                     </div>
                 </div>
             </div>
@@ -316,18 +317,16 @@
 
 
         <script src="js/reporte.js"></script>
-        <script src="js/ciudad.js"></script>
+
+        <script src="js/sacramentos.js"></script>
         <script src="js/exportacion.js"></script>
+        <script src="js/graficos.js"></script>
 
 
         <!-- Core plugin JavaScript-->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-
-
-
-
 
 </body>
 

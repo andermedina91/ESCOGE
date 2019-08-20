@@ -17,10 +17,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="reportes/css/reporte.css">
 
-    <!-- Custom styles for this template-->
-
-    <link rel="stylesheet" href="css/reporte.css">
-
 </head>
 
 <body class="bg-gradient-primary">
@@ -36,18 +32,18 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"><img src="img/cruz.png" alt=""></div>
+                            <div class="col-lg-6 d-none d-lg-block"><img src="reportes/img/cruz.png" alt=""></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenid@s</h1>
                                     </div>
-                                    <form class="user" method="POST">
+                                    <form class="user" method="POST" action="reportes/admin/login.php">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Increse su usuario.." required>
+                                            <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Ingrese su usuario..." required autocomplete="off" required="">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Contraseña">
+                                            <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Ingrese su contraseña" autocomplete="off" required="">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -55,27 +51,15 @@
                                                 <label class="custom-control-label" for="customCheck">Recuerdame</label>
                                             </div>
                                         </div>
-                                        <a href="index.php" class="btn btn-primary btn-user btn-block" type="submit"> 
-                                            Iniciar Seccion
-                                          </a>
-                                        <!-- <a href="/" class="btn btn-primary btn-user btn-block" onclick="SignInWithEmailAndPass()">Iniciar Seccion                
-                                         </a> -->
-                                        <!-- <hr>
-                                        <a href="#" class="btn btn-google btn-user btn-block" onclick="googleSignln()">
-                                            <i class="fab fa-google fa-fw"></i> Iniciar con Google
-                                        </a>
-                                        
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Iniciar con Facebook
-                                        </a>
-                                        -->
+                                        <button class="btn btn-primary btn-user btn-block" type="submit"> 
+                                            Iniciar Sesion
+                                        </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="contrasena.php" type="submit ">Olvidaste la Contraseña?</a>
+                                        <a class="small" href="contrasena.html" type="submit ">Olvidaste la Contraseña?</a>
                                     </div>
                                     <div class="text-center">
-                                        <!-- <a class="small" href="registro.html" onclick="create()">Crear Cuenta!</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -90,19 +74,11 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js "></script> -->
-
+    <script src="reportes/vendor/jquery/jquery.min.js"></script>
+    <script src="reportes/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-
-    <script src="js/reporte.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="reportes/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 

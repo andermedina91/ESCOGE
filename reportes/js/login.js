@@ -9,6 +9,8 @@
 //             console.log("Algo Estoy haciendo Mal, debo seguir intentandolo")
 //         })
 // }
+
+/* INICIO DE  PRUEBA DE NUEVO LOGIN
 var config = {
     apiKey: "AIzaSyD0mkwckSn7XLkSjUWIjyxa25OeQQMmhCA",
     authDomain: "escogerd01.firebaseapp.com",
@@ -59,14 +61,9 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     var credential = error.credential;
     // ...
 });
-
-
-
-
-
-
+*/
 ////firebase.auth().signOut().then(function() {
 // Sign-out successful.
 //}).catch(function(error) {
 // An error happened.
-//});
+//});PRO
