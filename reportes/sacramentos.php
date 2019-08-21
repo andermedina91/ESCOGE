@@ -1,5 +1,5 @@
 <?php
-    require_once('admin/current_user.php');
+require_once('admin/current_user.php');
 ?>
 
 <!DOCTYPE html>
@@ -143,8 +143,8 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
                     <ul class="navbar-nav ml-auto">
@@ -172,8 +172,8 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                      <!-- Navegar Information usuario -->
-                      <li class="nav-item dropdown no-arrow">
+                        <!-- Navegar Information usuario -->
+                        <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
                                 <img class="img-profile rounded-circle" src="img/ander.JPG">
@@ -197,7 +197,7 @@
                         </li>
 
                     </ul>
-                   
+
 
                 </nav>
                 <!-- End of Topbar -->
@@ -276,25 +276,7 @@
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            Listo para salir?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-                    </div>
-                    <div class="modal-body">
-                        Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                        <a class="btn btn-primary" href="login.php">Cerrar Seccion</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include 'logout.php'; ?>
 
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
