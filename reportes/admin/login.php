@@ -2,15 +2,15 @@
 
 require_once('consultas.php');
 
-$user_name = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-if(existUser($user_name, $password))
+if(existUser($email, $password))
 {
     session_start();
 
     // habilita una variable de session para los users autenticados
-    $_SESSION['user_data'] = $user_name;
+    $_SESSION['user_data'] = $email;
 
     // redirecciono a la parte admin del proyectoS
     header('Location: http://localhost/ESCOGE/reportes/');

@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="img/150.jpg">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="reportes/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -34,27 +34,27 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"><img src="img/repote.jpg" alt=""></div>
+                            <div class="col-lg-6 d-none d-lg-block"><img src="reportes/img/repote.jpg" alt=""></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">¿Olvidaste tu contraseña?</h1>
-                                        <p class="mb-4">Lo conseguimos, las cosas pasan. Simplemente ingrese su dirección de correo electrónico a continuación y le enviaremos un enlace para restablecer su contraseña.!</p>
+                                        <h1 class="h4 text-gray-900 mb-2">Cambia tu contraseña</h1>
                                     </div>
-                                    <form class="user" action="http://localhost/ESCOGE/reportes/admin/recuperar_pass.php" method="POST">
+                                    <form class="user" action="http://localhost/ESCOGE/reportes/admin/restablecer_pass.php" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrar con el Correo Eletronico...">
+                                            <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
+                                            <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Nueva contrasena">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="repeat_password" name="repeat_password" placeholder="Repita la nueva contrasena">
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Recibir correo
+                                            Restablecer Contraseña
                                         </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
                                         <!-- <a class="small" href="registro.html">Crear Cuenta!</a> -->
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="http://localhost/ESCOGE/login.php">¿Ya tienes una cuenta? ¡Iniciar sesión!</a>
                                     </div>
                                 </div>
                             </div>

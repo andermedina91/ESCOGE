@@ -40,7 +40,7 @@
                                     </div>
                                     <form class="user" method="POST" action="reportes/admin/login.php">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Ingrese su usuario..." required autocomplete="off" required="">
+                                            <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Ingrese su usuario..." required autocomplete="off" required="">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Ingrese su contraseña" autocomplete="off" required="">
@@ -57,7 +57,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="contrasena.html" type="submit ">Olvidaste la Contraseña?</a>
+                                        <a class="small" href="reportes/contrasena.php" type="submit ">Olvidaste la Contraseña?</a>
                                     </div>
                                     <div class="text-center">
                                     </div>

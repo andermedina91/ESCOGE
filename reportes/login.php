@@ -110,7 +110,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="contrasena.html">Olvidaste la Contraseña?</a>
+                                        <a class="small" href="contrasena.php">Olvidaste la Contraseña?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="registro.html" onclick="create()">Crear Cuenta!</a>

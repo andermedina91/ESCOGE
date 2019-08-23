@@ -178,18 +178,17 @@
         return $data ?? 0;
     }
 
-    function existUser ($user_name, $pass)
+    function existUser ($email, $pass)
     {
         include('conexion.php');
 
         $query = "
             SELECT
-                username,
-                password
+                *
             FROM
                 login
             WHERE
-                username = '$user_name'
+                email = '$email'
                     and password = '$pass'
             LIMIT 1
         ";
@@ -199,9 +198,34 @@
         while($row = $result->fetch_assoc())
         {
             $data['username'] = $row['username'];
+            $data['email'] = $row['email'];
             $data['password'] = $row['password'];
         }
 
         return isset($data) ? true : false;
-    }    
+    }
+
+    function buscarEmail ($email)
+    {
+        include('conexion.php');
+
+        $query = "
+            SELECT
+                *
+            FROM
+                login
+            WHERE
+                email = '$email'
+            LIMIT 1
+        ";
+
+        $result = $conn->query($query);
+
+        while($row = $result->fetch_assoc())
+        {
+            $data['email'] = $row['email'];
+        }
+
+        return isset($data) ? true : false;
+    }
 ?>
