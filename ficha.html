@@ -142,14 +142,13 @@
                                                                 <i class="fa fa-address-card"></i>
                                                             </div>
                                                             <input name="identidad " title="Introduzca su cedula" id="id_identidad" placeholder="Celular " onfocus="this.placeholder='' 
-                                                            " onblur="this.placeholder='Introduzca su cedula' " onkeypress="return validar(event)" class="cedula_ddd" 
-                                                            maxlength="13" class="common-input mb-20 form-control " required=" " type="text">
+                                                            " onblur="this.placeholder='Introduzca su cedula' " onkeypress="return validar(event)" class="cedula_ddd" maxlength="13" class="common-input mb-20 form-control " required=" " type="text">
 
-                                                            
+
                                                             <!-- <input name="identidad" id="id_identidad" title="Introduzca su cedula" class="cedula_ddd" maxlength="15" placeholder="Introduzca su cedula " onfocus="this.placeholder='' " onkeypress="return validar(event)" onblur="this.placeholder='Introduzca su cedula' " class=" common-input mb-20 form-control "
                                                                 required=" " type="text "> -->
                                                         </div>
-                                                        
+
 
 
                                                     </div>
@@ -693,7 +692,7 @@ Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
 </script>
 
 <script>
-    window.onload = function(){
+    window.onload = function() {
         Clear();
     }
 
@@ -747,6 +746,51 @@ Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
         return patron.test(tecla_final);
 
     }
+</script>
+
+<script>
+    function valida_cedula(ced) {
+        var c = ced.replace(/-/g, '');
+        var cedula = c.substr(0, c.length - 1);
+        var verificador = c.substr(c.length - 1, 1);
+        var suma = 0;
+        var cedulaValida = 0;
+
+        if (ced.length < 11) {
+            return false;
+        }
+
+        for (i = 0; i < cedula.length; i++) {
+            mod = "";
+            if ((i % 2) == 0) {
+                mod = 1
+            } else {
+                mod = 2
+            }
+            res = cedula.substr(i, 1) * mod;
+            if (res > 9) {
+                res = res.toString();
+                uno = res.substr(0, 1);
+                dos = res.substr(1, 1);
+                res = eval(uno) + eval(dos);
+            }
+            suma += eval(res);
+        }
+
+        el_numero = (10 - (suma % 10)) % 10;
+
+        if (el_numero == verificador && cedula.substr(0, 3) != "000") {
+            cedulaValida = 1;
+        } else {
+            cedulaValida = 0;
+        }
+        return cedulaValida;
+    }
+
+    if (valida_cedula('567-1234567-0'))
+        alert('La cedula es valida');
+    else
+        alert('La cedula es invalida');
 </script>
 
 

@@ -228,4 +228,28 @@
 
         return isset($data) ? true : false;
     }
+
+    function expiraToken ($token)
+    {
+        include('conexion.php');
+
+        $query = "
+            SELECT
+                fecha_expiracion
+            FROM
+                login
+            WHERE
+                token = '$token'
+            LIMIT 1
+        ";
+
+        $result = $conn->query($query);
+
+        while($row = $result->fetch_assoc())
+        {
+            $data['fecha_expiracion'] = $row['fecha_expiracion'];
+        }
+
+        return isset($data) ? $data['fecha_expiracion'] : false;
+    }
 ?>

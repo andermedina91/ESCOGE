@@ -1,8 +1,56 @@
+<?php
+    include('reportes/admin/consultas.php');
+    date_default_timezone_set('America/Santo_Domingo');
+
+    // script para cuando el usuario envia su nueva contrasena
+    if($_POST)
+    {
+        $errores = [];
+        $success = [];
+
+        // variables de trabajo
+        $pass = $_POST['password'];
+        $repeat_pass = $_POST['repeat_password'];
+        $token = $_POST['token'];
+        $fecha_expiracion_token = expiraToken($token);
+
+        // verifico que el token aun se encuentre activo
+        if(strtotime($fecha_expiracion_token) > time())
+        {
+            # cambiar contrasena #
+            if($pass == $repeat_pass)
+            {
+                include('reportes/admin/conexion.php');
+
+                // preparo la sentencia sql
+                $sql = "
+                    UPDATE
+                        login
+                    SET
+                        password = '$pass',
+                        fecha_expiracion = NULL,
+                        token = NULL
+                    WHERE
+                        token = '$token'
+                ";
+
+                // ejecuto la consulta
+                if($conn->query($sql))
+                    $success['send_email'] = 'La contrasena se ha restablecido correctamente.';
+            }
+
+            else
+                $errores['pass'] = 'La pass ingresada no coinciden.';
+        }
+
+        else
+            $errores['token'] = 'No puedes cambiar tu contrasena usando este token.';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,7 +88,8 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">Cambia tu contraseña</h1>
                                     </div>
-                                    <form class="user" action="http://localhost/ESCOGE/reportes/admin/restablecer_pass.php" method="POST">
+                                    <form class="user" action="http://localhost/ESCOGE/recover_pass.php" method="POST">
+                                        <!-- <form class="user" action="http://localhost/ESCOGE/reportes/admin/restablecer_pass.php" method="POST"> -->
                                         <div class="form-group">
                                             <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
                                             <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Nueva contrasena">
@@ -74,9 +123,78 @@
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    
+    <?php
+        if(isset($errores['pass']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        type: "error",
+                        title: "Oops...",
+                        text: "'.$errores['pass'].'",
+                        footer: "Por favor, ingresa tus credenciales nuevamente."
+                    });
+                </script>
+            ';
+
+            $errores['pass'] = null;
+        }
+        
+        // alerta para el token
+        if(isset($errores['token']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        title: "El token ha expirado",
+                        text: "'.$errores['token'].'",
+                        type: "error",
+                        showCancelButton: false,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Okey!"
+                        }).then((result) => {
+                            if (result.value)
+                            {
+                                window.location.href = "http://localhost/ESCOGE/reportes/contrasena.php";
+                            }
+                    });
+                </script>
+            ';
+
+            $errores['token'] = null;
+        }
+
+        // alerta de exito cuando se envia el correo al usuario
+        if(isset($success['send_email']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        title: "Cambio de contrasena exitoso",
+                        text: "'.$success['send_email'].'",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Okey!"
+                        }).then((result) => {
+                            if (result.value)
+                            {
+                                window.location.href = "http://localhost/ESCOGE/login.php";
+                            }
+                    });
+                </script>
+            ';
+                    
+            $success = null;
+        }
+    ?>
 
 </body>
 
