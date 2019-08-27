@@ -32,24 +32,37 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"><img src="reportes/img/cruz.png" alt=""></div>
+                            <div class="col-lg-6 d-none d-lg-block"><img 
+                            src="reportes/img/cruz.png"
+
+
+                            alt=""></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenid@s</h1>
                                     </div>
+                                    <!-- <form class="user" method="POST" action="http://localhost/ESCOGE/reportes/"> -->
                                     <form class="user" method="POST" action="reportes/admin/login.php">
+
+                                    <!-- header('Location: http://localhost/ESCOGE/reportes/'); -->
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="Ingrese su usuario..." required autocomplete="off" required="">
+                                            <input type="email" class="form-control form-control-user" 
+                                            name="email" id="email" placeholder="Ingrese su usuario..." 
+                                            required autocomplete="off" required="">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Ingrese su contraseña" autocomplete="off" required="">
+                                            <input type="password" class="form-control form-control-user" 
+                                            name="password" id="password" placeholder="Ingrese su contraseña" 
+                                            autocomplete="off" required="">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recuerdame</label>
-                                            </div>
+                                            <!-- <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input"
+                                                 id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">
+                                                    Recuerdame</label>
+                                            </div> -->
                                         </div>
                                         <button class="btn btn-primary btn-user btn-block" type="submit"> 
                                             Iniciar Sesion

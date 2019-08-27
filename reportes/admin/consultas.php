@@ -1,9 +1,9 @@
 <?php
-    function galleries ()
-    {
-        include_once('conexion.php');
+function galleries()
+{
+    include_once('conexion.php');
 
-        $query = "
+    $query = "
             SELECT
                 a.*,
                 (
@@ -29,34 +29,33 @@
                 albums as a
         ";
 
-        // guardo los resultados de la consulta
-        $result = $conn->query($query);
+    // guardo los resultados de la consulta
+    $result = $conn->query($query);
 
-        // cierro la conexion a la base de datos
-        $conn->close();
+    // cierro la conexion a la base de datos
+    $conn->close();
 
-        // recorriendo los resultados de la consulta
-        while($row = $result->fetch_assoc())
-        {
-            $data["id_album"][] = $row['id_album'];
-            $data['titulo'][] = $row['titulo'];
-            $data['subtitulo'][] = $row['subtitulo'];
-            $data['slug'][] = $row['slug'];
-            $data['descripcion'][] = $row['descripcion'];
-            $data['imagen'][] = $row['imagen'];
-            $data['fecha'][] = $row['fecha_creacion'];
-            $data['id_detalle'][] = $row['id_detalle'];
-        }
-
-        return $data ?? 0;
+    // recorriendo los resultados de la consulta
+    while ($row = $result->fetch_assoc()) {
+        $data["id_album"][] = $row['id_album'];
+        $data['titulo'][] = $row['titulo'];
+        $data['subtitulo'][] = $row['subtitulo'];
+        $data['slug'][] = $row['slug'];
+        $data['descripcion'][] = $row['descripcion'];
+        $data['imagen'][] = $row['imagen'];
+        $data['fecha'][] = $row['fecha_creacion'];
+        $data['id_detalle'][] = $row['id_detalle'];
     }
 
+    return $data ?? 0;
+}
 
-    function getGallery ($slug_or_id)
-    {
-        include('conexion.php');
 
-        $query = "
+function getGallery($slug_or_id)
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 *
             FROM
@@ -70,119 +69,115 @@
                 END)
         ";
 
-        // guardo los resultados de la consulta
-        $result = $conn->query($query);
+    // guardo los resultados de la consulta
+    $result = $conn->query($query);
 
-        // cierro la conexion a la base de datos
-        $conn->close();
+    // cierro la conexion a la base de datos
+    $conn->close();
 
-        // recorriendo los resultados de la consulta
-        while($row = $result->fetch_assoc())
-        {
-            $data['titulo'][] = $row['titulo'];
-            $data['descripcion'][] = $row['descripcion'];
-            $data['imagen'][] = $row['imagen'];
-            $data['id_detalle'][] = $row['id_detalle'];
-            $data['id_album'][] = $row['id_album'];
-            $data['es_principal'][] = $row['es_principal'];
-        }
-
-        return $data ?? 0;
+    // recorriendo los resultados de la consulta
+    while ($row = $result->fetch_assoc()) {
+        $data['titulo'][] = $row['titulo'];
+        $data['descripcion'][] = $row['descripcion'];
+        $data['imagen'][] = $row['imagen'];
+        $data['id_detalle'][] = $row['id_detalle'];
+        $data['id_album'][] = $row['id_album'];
+        $data['es_principal'][] = $row['es_principal'];
     }
 
-    //INICIO DE RETIRO
+    return $data ?? 0;
+}
 
-    function retiros ()
-    {
-        include('conexion.php');
+//INICIO DE RETIRO
 
-        $query = "
+function retiros()
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 *
             FROM
                 info_retiro
         ";
 
-        // guardo los resultados de la consulta
-        $result = $conn->query($query);
+    // guardo los resultados de la consulta
+    $result = $conn->query($query);
 
-        // cierro la conexion a la base de datos
-        //$conn->close();
+    // cierro la conexion a la base de datos
+    //$conn->close();
 
-        // recorriendo los resultados de la consulta
-        while($row = $result->fetch_assoc())
-        {
-            $data['titulo'][] = $row['titulo'];
-            $data['descripcion'][] = $row['descripcion'];
-        }
-
-        return $data ?? 0;
+    // recorriendo los resultados de la consulta
+    while ($row = $result->fetch_assoc()) {
+        $data['titulo'][] = $row['titulo'];
+        $data['descripcion'][] = $row['descripcion'];
     }
 
-    //INICIO DE CAROUSEL
+    return $data ?? 0;
+}
 
-    function carousel ()
-    {
-        include('conexion.php');
+//INICIO DE CAROUSEL
 
-        $query = "
+function carousel()
+{
+    include('conexion.php');
+
+    $query = "
            
             SELECT 
             id_carousel,titulo,subtitulo,slug,descripcion,imagen,  FROM carousel
         ";
 
-        // guardo los resultados de la consulta
-        $result = $conn->query($query);
+    // guardo los resultados de la consulta
+    $result = $conn->query($query);
 
-        // cierro la conexion a la base de datos
-        $conn->close();
+    // cierro la conexion a la base de datos
+    $conn->close();
 
-        // recorriendo los resultados de la consulta
-        while($row = $result->fetch_assoc())
-        {
-            $data['titulo'][] = $row['titulo'];
-            $data['subtitulo'][] = $row['subtitulo'];
-            $data['slug'][] = $row['slug'];
-            $data['descripcion'][] = $row['descripcion'];
-            $data['imagen'][] = $row['imagen'];
-        }
-
-        return $data ?? 0;
+    // recorriendo los resultados de la consulta
+    while ($row = $result->fetch_assoc()) {
+        $data['titulo'][] = $row['titulo'];
+        $data['subtitulo'][] = $row['subtitulo'];
+        $data['slug'][] = $row['slug'];
+        $data['descripcion'][] = $row['descripcion'];
+        $data['imagen'][] = $row['imagen'];
     }
 
-    function eventos ()
-    {
-        include('conexion.php');
+    return $data ?? 0;
+}
 
-        $query = "
+function eventos()
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 *
             FROM
                 eventos
         ";
 
-        // guardo los resultados de la consulta
-        $result = $conn->query($query);
+    // guardo los resultados de la consulta
+    $result = $conn->query($query);
 
-        // cierro la conexion a la base de datos
-        //$conn->close();
+    // cierro la conexion a la base de datos
+    //$conn->close();
 
-        // recorriendo los resultados de la consulta
-        while($row = $result->fetch_assoc())
-        {
-            $data['imagen'][] = $row['imagen'];
-            $data['titulo'][] = $row['titulo'];
-            $data['descripcion'][] = $row['descripcion'];
-        }
-
-        return $data ?? 0;
+    // recorriendo los resultados de la consulta
+    while ($row = $result->fetch_assoc()) {
+        $data['imagen'][] = $row['imagen'];
+        $data['titulo'][] = $row['titulo'];
+        $data['descripcion'][] = $row['descripcion'];
     }
 
-    function existUser ($email, $pass)
-    {
-        include('conexion.php');
+    return $data ?? 0;
+}
 
-        $query = "
+function existUser($email, $pass)
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 *
             FROM
@@ -193,23 +188,22 @@
             LIMIT 1
         ";
 
-        $result = $conn->query($query);
+    $result = $conn->query($query);
 
-        while($row = $result->fetch_assoc())
-        {
-            $data['username'] = $row['username'];
-            $data['email'] = $row['email'];
-            $data['password'] = $row['password'];
-        }
-
-        return isset($data) ? true : false;
+    while ($row = $result->fetch_assoc()) {
+        $data['username'] = $row['username'];
+        $data['email'] = $row['email'];
+        $data['password'] = $row['password'];
     }
 
-    function buscarEmail ($email)
-    {
-        include('conexion.php');
+    return isset($data) ? true : false;
+}
 
-        $query = "
+function buscarEmail($email)
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 *
             FROM
@@ -219,21 +213,20 @@
             LIMIT 1
         ";
 
-        $result = $conn->query($query);
+    $result = $conn->query($query);
 
-        while($row = $result->fetch_assoc())
-        {
-            $data['email'] = $row['email'];
-        }
-
-        return isset($data) ? true : false;
+    while ($row = $result->fetch_assoc()) {
+        $data['email'] = $row['email'];
     }
 
-    function expiraToken ($token)
-    {
-        include('conexion.php');
+    return isset($data) ? true : false;
+}
 
-        $query = "
+function expiraToken($token)
+{
+    include('conexion.php');
+
+    $query = "
             SELECT
                 fecha_expiracion
             FROM
@@ -243,13 +236,13 @@
             LIMIT 1
         ";
 
-        $result = $conn->query($query);
+    $result = $conn->query($query);
 
-        while($row = $result->fetch_assoc())
-        {
-            $data['fecha_expiracion'] = $row['fecha_expiracion'];
-        }
-
-        return isset($data) ? $data['fecha_expiracion'] : false;
+    while ($row = $result->fetch_assoc()) {
+        $data['fecha_expiracion'] = $row['fecha_expiracion'];
     }
-?>
+
+    return isset($data) ? $data['fecha_expiracion'] : false;
+}
+
+

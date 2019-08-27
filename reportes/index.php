@@ -95,12 +95,12 @@ require_once('admin/current_user.php');
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Paginas de inicio</span>
+                    <span>Paginas de Acceso</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"> Pantallas de inicio </h6>
-                        <a class="collapse-item" href="login.php">Inicio</a>
+                        <h6 class="collapse-header"> Pantallas de Acceso </h6>
+                        <a class="collapse-item" href="login.php">Login</a>
                         <a class="collapse-item" href="registro.php">Registrarse</a>
                         <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
