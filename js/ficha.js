@@ -223,7 +223,7 @@ $("#id_arquidiocesis").change(function() {
         $("#id_diocesis").html("");
 
         // recorro el arreglo hasta la posicion [5] (corresponden a las diosesis de Sto. Dgo.)
-        for (var x = 0; x < 5; x++) {
+        for (var x = 0; x < 6; x++) {
             $("#id_diocesis")
                 .append('<option value="' + diocsesis[x] + '">' + diocsesis[x] + '</option>');
         }
@@ -234,7 +234,7 @@ $("#id_arquidiocesis").change(function() {
         $("#id_diocesis").html("");
 
         // recorro el arreglo desde la posicion [6] hasta la posicion [9] (corresponden a las diosesis de Stgo.)
-        for (var x = 6; x <= 9; x++) {
+        for (var x = 7; x <= 10; x++) {
             $("#id_diocesis")
                 .append('<option value="' + diocsesis[x] + '">' + diocsesis[x] + '</option>');
         }
