@@ -1,6 +1,62 @@
-<!-- <?php
-// require_once('admin/current_user.php');
-?> -->
+<?php
+    require_once('reportes/admin/current_user.php');
+
+    if($_POST)
+    {
+        require_once('reportes/admin/conexion.php');
+
+        $nombres = $_POST['nombres'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $repeat_password = $_POST['repeat_password'];
+        $errrores = [];
+
+        // busco si el correo existe en la base de datos
+        $query = "
+            SELECT
+                *
+            FROM
+                login
+            WHERE
+                email = '$email'
+        ";
+
+        // guardo los resultados de la consulta
+        $result = $conn->query($query);
+
+        // recorriendo los resultados de la consulta
+        while ($row = $result->fetch_assoc()) {
+            $data['email'][] = $row['email'];
+        }
+
+        if(isset($data))
+            $errores['email'] = 'La cuenta de email ingresada ya existe. Por favor, intenta con otra.';
+
+        else
+        {
+            if($password == $repeat_password && strlen(password) == 0)
+            {
+                $password = password_hash($password, PASSWORD_DEFAULT);
+
+                //Insertar data
+                $query = "
+                    INSERT INTO login( username, password, email, token, fecha_expiracion)
+                    VALUES ('$nombres','$password','$email','NULL','NULL')
+                ";
+
+                $conn->query($query);
+
+                header('Location: http://localhost/ESCOGE/reportes/');
+            }
+
+            else
+                $errores['pass'] = 'Las contrasenas no coinciden o estan vacias. Por favor, ingresalas nuevamente.';
+        }
+
+        // cierro la conexion a la base de datos
+        $conn->close();
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,30 +96,24 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">¡Registrate!</h1>
                             </div>
-                            <form class="user" method="POST" action="reportes/admin/registro.php">
+                            <form class="user" method="POST" action="registro.php">
                                 <div class="form-group row">
-                                    <!-- <div class="col-sm-6 mb-6 mb-sm-0"> -->
-                                        <input type="text" class="form-control form-control-user" name="nombres"id="nombres" placeholder="Nombre de Usuario"
-                                        required autocomplete="off" required="">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control form-control-user" name="nombres"id="nombres" placeholder="Nombre de Usuario"  required="" value="<?php isset($_POST['nombres']) ? print $_POST['nombres'] : null; ?>">
                                     </div>
+                                </div>
 
-                                    <!-- <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="apellidos" name="apellidos"
-                                        placeholder="Apellidos" required autocomplete="off" required="">
-                                    </div> -->
-                                
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email"name="email"
-                                    placeholder="Correo Electronicos" required autocomplete="off" required="">
+                                    placeholder="Correo Electronicos" required required="" value="<?php isset($_POST['email']) ? print $_POST['email'] : null; ?>">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user" id="password"name="password"
-                                         placeholder="Contraseña" required autocomplete="off" required="">
+                                            placeholder="Contraseña" required required="">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"id="repeat_password"name="repeat_password"
-                                         placeholder="Repetir Contraeña" required autocomplete="off" required="">
+                                        <input type="password" class="form-control form-control-user"id="repeat_password"name="repeat_password" placeholder="Repetir Contraeña" required required="">
                                     </div>
                                 </div>
 
@@ -101,6 +151,41 @@
 
     <!-- Core plugin JavaScript-->
     <script src="reportes/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+
+    <?php
+        if(isset($errores['pass']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        type: "error",
+                        title: "Oops...",
+                        text: "'.$errores['pass'].'"
+                    });
+                </script>
+            ';
+
+            $errores['pass'] = null;
+        }
+    ?>
+
+<?php
+        if(isset($errores['email']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        type: "error",
+                        title: "Oops...",
+                        text: "'.$errores['email'].'"
+                    });
+                </script>
+            ';
+
+            $errores['email'] = null;
+        }
+    ?>
 </body>
 
 </html>

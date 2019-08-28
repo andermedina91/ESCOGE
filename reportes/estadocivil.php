@@ -1,3 +1,7 @@
+<?php
+    require_once('admin/current_user.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -35,7 +35,7 @@ var dateValue = date.toLocaleString("es-ES", options).toString();
 function CreateFicha() {
     var nombre = document.getElementById('id_nombre').value;
     var apellido = document.getElementById('id_apellido').value;
-    var identidad = document.getElementById('id_identidad').value;
+    var identidad = document.getElementById('id_identidad').value.replace('-', '').replace('-', '');
     var edad = document.getElementById('id_edad').value;
     var genero = document.getElementById('id_genero').value;
     var ecivil = document.getElementById('id_ecivil').value;
@@ -90,8 +90,13 @@ function CreateFicha() {
         return 0;
     }
 
-    if(identidad.length != 11){
-        alert('El campo Identidad esta invalido!');//-------------modificar mensaje
+    if (identidad.length != 11) {
+        alert('El campo Identidad esta invalido!'); //-------------modificar mensaje
+        return 0;
+    }
+
+    if (!valida_cedula(identidad)) {
+        alert('La cedula es incorrecta.'); //-------------modificar mensaje
         return 0;
     }
 

@@ -1,3 +1,28 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['user_data']))
+        header('Location: http://localhost/ESCOGE/reportes/');
+
+    if($_POST)
+    {
+        require_once('reportes/admin/consultas.php');
+        $errores = [];
+
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        if(existUser($email, $password))
+        {
+            // redirecciono a la parte admin del proyectoS
+            header('Location: http://localhost/ESCOGE/reportes/');
+        }
+
+        else
+            $errores['user'] = 'Las credenciales son incorrectas o el usuario ingresado no existe.';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +68,7 @@
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenid@s</h1>
                                     </div>
                                     <!-- <form class="user" method="POST" action="http://localhost/ESCOGE/reportes/"> -->
-                                    <form class="user" method="POST" action="reportes/admin/login.php">
+                                    <form class="user" method="POST" action="login.php">
 
                                     <!-- header('Location: http://localhost/ESCOGE/reportes/'); -->
                                         <div class="form-group">
@@ -92,6 +117,25 @@
 
     <!-- Core plugin JavaScript-->
     <script src="reportes/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+
+    <?php
+        if(isset($errores['user']))
+        {
+            echo '
+                <script>
+                    Swal.fire({
+                        type: "error",
+                        title: "Oops...",
+                        text: "'.$errores['user'].'",
+                        footer: "Por favor, ingresa tus credenciales nuevamente."
+                    });
+                </script>
+            ';
+
+            $errores['user'] = null;
+        }
+    ?>
 
 </body>
 

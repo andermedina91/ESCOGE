@@ -184,7 +184,6 @@ function existUser($email, $pass)
                 login
             WHERE
                 email = '$email'
-                    and password = '$pass'
             LIMIT 1
         ";
 
@@ -196,8 +195,28 @@ function existUser($email, $pass)
         $data['password'] = $row['password'];
     }
 
-    return isset($data) ? true : false;
+    if(isset($data))
+    {
+        if(password_verify($pass, $data['password']))
+        {
+            session_start();
+
+            $data['password'] = null;
+
+            // habilita una variable de session para los users autenticados
+            $_SESSION['user_data'] = $data;
+
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    else
+        return false;
 }
+
 
 function buscarEmail($email)
 {
