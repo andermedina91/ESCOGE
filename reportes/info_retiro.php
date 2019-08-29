@@ -102,7 +102,7 @@ require_once('admin/current_user.php');
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
                         <a class="collapse-item" href="login.php">Inicio</a>
-                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="/registro.php">Registrarse</a>
                         <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
                         <!-- <h6 class="collapse-header">Otras Paginas</h6>
@@ -175,7 +175,7 @@ require_once('admin/current_user.php');
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ander Medina</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['user_data']['username']; ?></span>
                                 <img class="img-profile rounded-circle" src="img/ander.JPG">
                             </a>
 
