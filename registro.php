@@ -1,14 +1,16 @@
 <?php
+    //error_reporting(0);
+
     require_once('reportes/admin/current_user.php');
 
     if($_POST)
     {
         require_once('reportes/admin/conexion.php');
 
-        $nombres = $_POST['nombres'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $repeat_password = $_POST['repeat_password'];
+        $nombres = $_POST['nombres'] ?? null;
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $repeat_password = $_POST['repeat_password'] ?? null;
         $errrores = [];
 
         // busco si el correo existe en la base de datos
@@ -34,7 +36,7 @@
 
         else
         {
-            if($password == $repeat_password && strlen(password) == 0)
+            if(($password == $repeat_password) && (strlen($password) > 0))
             {
                 $password = password_hash($password, PASSWORD_DEFAULT);
 

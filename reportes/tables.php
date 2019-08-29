@@ -109,7 +109,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"> Pantallas de inicio </h6>
                         <a class="collapse-item" href="login.php">Inicio</a>
-                        <a class="collapse-item" href="registro.php">Registrarse</a>
+                        <a class="collapse-item" href="/ESCOGE/registro.php">Registrarse</a>
                         <a class="collapse-item" href="contrasena.php">Olvidaste tu Contraseña</a>
                         <div class="collapse-divider"></div>
                         <!-- <h6 class="collapse-header">Otras Paginas</h6>
